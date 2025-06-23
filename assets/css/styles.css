@@ -812,8 +812,12 @@ section {
     }
 
     .hero {
-        min-height: auto;
-        padding: 120px 0 80px 0;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 0 60px 0;
     }
 
     .hero-container {
@@ -821,9 +825,13 @@ section {
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 40px;
+        width: 100%;
+        text-align: center;
     }
 
     .hero-title {
@@ -850,6 +858,9 @@ section {
     .hero-image {
         order: -1;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .profile-card {
@@ -892,7 +903,9 @@ section {
     }
 
     .scroll-indicator {
-        bottom: 20px;
+        position: static;
+        margin: 20px auto 0 auto;
+        transform: none;
     }
 
     .scroll-arrow {
@@ -926,7 +939,8 @@ section {
 
 @media (max-width: 480px) {
     .hero {
-        padding: 100px 0 60px 0;
+        min-height: 100dvh;
+        padding: 80px 0 40px 0;
     }
 
     .hero-container {
@@ -983,7 +997,9 @@ section {
     }
 
     .scroll-indicator {
-        bottom: 15px;
+        position: static;
+        margin: 15px auto 0 auto;
+        transform: none;
     }
 
     .scroll-arrow {
