@@ -970,6 +970,10 @@ section {
         padding: 12px 15px 15px;
     }
 
+    .project-content p {
+        text-align: center;
+    }
+
     .project-links {
         flex-direction: column;
         gap: 6px;
@@ -1062,6 +1066,11 @@ section {
     .scroll-arrow {
         width: 20px;
         height: 20px;
+    }
+
+    /* Centralizar texto dos projetos em telas muito pequenas */
+    .project-content p {
+        text-align: center;
     }
 }
 
@@ -1367,6 +1376,10 @@ body.dark-theme .contact-fixed-btn:hover {
 
     .project-content {
         padding: 12px 15px 15px;
+    }
+
+    .project-content p {
+        text-align: center;
     }
 
     .project-links {
