@@ -899,6 +899,29 @@ section {
         width: 25px;
         height: 25px;
     }
+
+    body.dark-theme .nav-menu {
+        background-color: #23232b;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.7);
+    }
+    body.dark-theme .nav-link {
+        color: #f1f5f9;
+    }
+    body.dark-theme .nav-link:hover {
+        color: #fbbf24;
+    }
+
+    .theme-toggle-btn {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
+        z-index: 1100;
+    }
+    .navbar {
+        position: relative;
+    }
 }
 
 @media (max-width: 480px) {
