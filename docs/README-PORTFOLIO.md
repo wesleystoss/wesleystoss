@@ -28,7 +28,7 @@ O portfólio pode ser facilmente hospedado em:
 ## 📁 Estrutura do Projeto
 
 ```
-wesleysSantos/
+wesleystoss/
 ├── index.html          # Página principal
 ├── styles.css          # Estilos CSS
 ├── script.js           # Funcionalidades JavaScript
@@ -155,8 +155,8 @@ As cores podem ser facilmente alteradas editando as variáveis CSS no arquivo `s
 
 Para dúvidas ou sugestões sobre o portfólio:
 - **Email**: wesleyrogerio77@gmail.com
-- **LinkedIn**: [linkedin.com/in/wesleysSantos](https://linkedin.com/in/wesleysSantos)
-- **GitHub**: [github.com/wesleysSantos](https://github.com/wesleysSantos)
+- **LinkedIn**: [linkedin.com/in/wesleystoss](https://linkedin.com/in/wesleystoss)
+- **GitHub**: [github.com/wesleystoss](https://github.com/wesleystoss)
 
 ## 📄 Licença
 
