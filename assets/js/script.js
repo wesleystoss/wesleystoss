@@ -419,4 +419,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
     }
-}); 
+});
+
+// Alternância de tema dark/light
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+
+function setTheme(dark) {
+    if (dark) {
+        document.body.classList.add('dark-theme');
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+    } else {
+        document.body.classList.remove('dark-theme');
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+    }
+}
+
+function toggleTheme() {
+    const isDark = document.body.classList.toggle('dark-theme');
+    setTheme(isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+    // Carregar preferência do usuário
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        setTheme(true);
+    } else {
+        setTheme(false);
+    }
+} 
