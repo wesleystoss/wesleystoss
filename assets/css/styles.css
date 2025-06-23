@@ -250,6 +250,13 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     max-width: 300px;
     width: 100%;
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .profile-avatar {
@@ -264,6 +271,15 @@ body {
     font-size: 3rem;
     color: white;
     overflow: hidden;
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 .profile-image {
@@ -859,17 +875,20 @@ section {
         word-break: break-word;
         max-width: 95vw;
         font-size: 2.2rem;
+        text-align: center;
     }
 
     .hero-subtitle {
         font-size: 1.3rem;
         margin-bottom: 15px;
+        text-align: center;
     }
 
     .hero-description {
         font-size: 1rem;
         margin-bottom: 30px;
         padding: 0 10px;
+        text-align: center;
     }
 
     .hero-buttons {
@@ -881,12 +900,16 @@ section {
         padding: 30px 20px;
         max-width: 280px;
         margin: 0 auto;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
     }
 
     .profile-avatar {
         width: 100px;
         height: 100px;
         margin-bottom: 15px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .profile-info h3 {
@@ -1001,30 +1024,21 @@ section {
     }
 
     .hero-title {
-        order: 1;
-    }
-    .hero-image {
-        order: 2;
-        margin-top: 15px;
-    }
-    .hero-info {
-        order: 3;
-        margin-top: 15px;
-    }
-
-    .hero-title {
         font-size: 1.6rem;
         max-width: 95vw;
         word-break: break-word;
+        text-align: center;
     }
 
     .hero-subtitle {
         font-size: 1.2rem;
+        text-align: center;
     }
 
     .hero-description {
         font-size: 0.95rem;
         padding: 0 5px;
+        text-align: center;
     }
 
     .section-title {
@@ -1047,11 +1061,15 @@ section {
     .profile-card {
         padding: 25px 15px;
         max-width: 250px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
     }
 
     .profile-avatar {
         width: 80px;
         height: 80px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .profile-info h3 {
