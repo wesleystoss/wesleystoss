@@ -341,8 +341,8 @@ section {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr;
+    gap: 40px;
     align-items: center;
 }
 
@@ -425,7 +425,7 @@ section {
 /* Projetos Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr;
     gap: 40px;
 }
 
@@ -627,10 +627,11 @@ section {
 
 /* Contato Section */
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
+    justify-content: center;
     align-items: start;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-info h3 {
@@ -822,11 +823,6 @@ section {
     }
 
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .contact-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
