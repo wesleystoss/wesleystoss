@@ -995,4 +995,144 @@ section {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Tema Dark */
+body.dark-theme {
+    --primary-color: #6366f1;
+    --primary-dark: #818cf8;
+    --secondary-color: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-light: #64748b;
+    --background: #18181b;
+    --background-alt: #27272a;
+    --border: #27272a;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --gradient: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+}
+
+body.dark-theme .navbar {
+    background: #23232b !important;
+    border-bottom: 1px solid #333;
+}
+body.dark-theme .nav-link {
+    color: #f1f5f9;
+}
+body.dark-theme .nav-link:hover {
+    color: #fbbf24;
+}
+body.dark-theme .hamburger span {
+    background: var(--text-primary);
+}
+
+body.dark-theme .hero {
+    color: var(--text-primary);
+    background: var(--gradient);
+}
+
+body.dark-theme .project-card,
+body.dark-theme .about,
+body.dark-theme .skills,
+body.dark-theme .footer {
+    background: var(--background-alt);
+    color: var(--text-primary);
+}
+
+body.dark-theme .btn-primary {
+    background: var(--primary-dark);
+    color: #fff;
+}
+body.dark-theme .btn-secondary {
+    background: var(--background-alt);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+body.dark-theme .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+.theme-toggle-btn:hover {
+    color: var(--primary-dark);
+}
+
+/* Ajustes de contraste para tema dark */
+body.dark-theme .hero-title,
+body.dark-theme .hero-subtitle,
+body.dark-theme .hero-description,
+body.dark-theme .profile-info h3,
+body.dark-theme .profile-info p,
+body.dark-theme .section-title,
+body.dark-theme .skills-category h3,
+body.dark-theme .skill-info h4 {
+    color: #fff;
+}
+body.dark-theme .btn-primary {
+    background: var(--primary-dark);
+    color: #fff;
+    border: none;
+}
+body.dark-theme .btn-secondary {
+    background: var(--background-alt);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+body.dark-theme .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+body.dark-theme .skill-item {
+    background: #23232b;
+}
+body.dark-theme .skill-description {
+    color: #cbd5e1;
+}
+body.dark-theme .level-badge.primary {
+    background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+}
+body.dark-theme .level-badge.secondary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+body.dark-theme .highlight-item,
+body.dark-theme .stat-card {
+    background: #23232b;
+    color: #f1f5f9;
+    border: 1px solid #333;
+}
+body.dark-theme .highlight-item h4,
+body.dark-theme .stat-number {
+    color: #fbbf24;
+}
+body.dark-theme .highlight-item p,
+body.dark-theme .stat-label {
+    color: #cbd5e1;
+}
+
+body.dark-theme .contact-method {
+    background: #23232b;
+    color: #f1f5f9;
+    border: 1px solid #333;
+}
+body.dark-theme .contact-method i {
+    color: #fbbf24;
+}
+body.dark-theme .contact-method.primary-contact {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #fff;
+    border-color: #25d366;
+}
+body.dark-theme .contact-method.primary-contact i {
+    color: #fff;
 } 
