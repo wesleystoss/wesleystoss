@@ -974,9 +974,14 @@ section {
         text-align: center;
     }
 
+    .project-tech {
+        justify-content: center;
+    }
+
     .project-links {
         flex-direction: column;
         gap: 6px;
+        align-items: center;
     }
 
     .project-links .btn-small {
@@ -1071,6 +1076,14 @@ section {
     /* Centralizar texto dos projetos em telas muito pequenas */
     .project-content p {
         text-align: center;
+    }
+
+    .project-tech {
+        justify-content: center;
+    }
+
+    .project-links {
+        align-items: center;
     }
 }
 
@@ -1382,9 +1395,14 @@ body.dark-theme .contact-fixed-btn:hover {
         text-align: center;
     }
 
+    .project-tech {
+        justify-content: center;
+    }
+
     .project-links {
         flex-direction: column;
         gap: 6px;
+        align-items: center;
     }
 
     .project-links .btn-small {
