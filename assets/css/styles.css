@@ -1246,4 +1246,67 @@ body.dark-theme .project-links .btn-live:hover i {
 .project-links .btn-small:hover i,
 .project-links .btn-live:hover i {
     color: #fff;
+}
+
+/* Botão Fixo de Contato (Mobile) */
+.contact-fixed-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.contact-fixed-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+}
+
+.contact-fixed-btn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-fixed-btn i {
+    font-size: 16px;
+}
+
+.contact-fixed-btn span {
+    display: none;
+}
+
+/* Mostrar apenas no mobile */
+@media (max-width: 768px) {
+    .contact-fixed-btn {
+        display: flex;
+    }
+    
+    .contact-fixed-btn span {
+        display: inline;
+    }
+}
+
+/* Tema escuro para o botão fixo */
+body.dark-theme .contact-fixed-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+body.dark-theme .contact-fixed-btn:hover {
+    background: var(--primary-dark);
 } 
