@@ -411,4 +411,4 @@ window.addEventListener('load', () => {
     }
 });
 
-console.log('🚀 Portfólio de Wesley Toss carregado com sucesso!'); 
+console.log('🚀 Portfólio de Wesley Santos carregado com sucesso!'); 

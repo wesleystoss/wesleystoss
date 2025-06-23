@@ -1,11 +1,11 @@
-# 🌟 Portfólio Wesley Toss
+# 🌟 Portfólio Wesley Santos
 
 Portfólio profissional e interativo desenvolvido para apresentar habilidades, projetos e experiência em desenvolvimento web.
 
 ## 📁 Estrutura do Projeto
 
 ```
-wesleystoss/
+wesleysSantos/
 ├── index.html                 # Página principal do portfólio
 ├── README.md                  # Este arquivo - documentação principal
 ├── assets/                    # Recursos estáticos
@@ -94,7 +94,7 @@ As cores podem ser facilmente alteradas editando as variáveis CSS no arquivo `a
 
 - **WhatsApp**: [wa.me/5561999241137](https://wa.me/5561999241137)
 - **LinkedIn**: [linkedin.com/in/wesley-santos-8b08721a3](https://linkedin.com/in/wesley-santos-8b08721a3)
-- **GitHub**: [github.com/wesleystoss](https://github.com/wesleystoss)
+- **GitHub**: [github.com/wesleysSantos](https://github.com/wesleysSantos)
 - **Email**: wesley@email.com
 
 ## 📄 Licença
@@ -103,4 +103,4 @@ Este projeto é de uso pessoal e pode ser adaptado para outros portfólios.
 
 ---
 
-**Desenvolvido com ❤️ por Wesley Toss** 
+**Desenvolvido com ❤️ por Wesley Santos** 

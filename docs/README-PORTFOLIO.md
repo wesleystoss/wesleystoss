@@ -1,4 +1,4 @@
-# 🌟 Portfólio Interativo - Wesley Toss
+# 🌟 Portfólio Interativo - Wesley Santos
 
 Um portfólio web moderno e interativo criado para apresentar minhas habilidades e projetos de forma profissional e acessível.
 
@@ -28,7 +28,7 @@ O portfólio pode ser facilmente hospedado em:
 ## 📁 Estrutura do Projeto
 
 ```
-wesleystoss/
+wesleysSantos/
 ├── index.html          # Página principal
 ├── styles.css          # Estilos CSS
 ├── script.js           # Funcionalidades JavaScript
@@ -155,8 +155,8 @@ As cores podem ser facilmente alteradas editando as variáveis CSS no arquivo `s
 
 Para dúvidas ou sugestões sobre o portfólio:
 - **Email**: wesley@email.com
-- **LinkedIn**: [linkedin.com/in/wesleystoss](https://linkedin.com/in/wesleystoss)
-- **GitHub**: [github.com/wesleystoss](https://github.com/wesleystoss)
+- **LinkedIn**: [linkedin.com/in/wesleysSantos](https://linkedin.com/in/wesleysSantos)
+- **GitHub**: [github.com/wesleysSantos](https://github.com/wesleysSantos)
 
 ## 📄 Licença
 
@@ -164,4 +164,4 @@ Este projeto é de uso pessoal e pode ser adaptado para outros portfólios.
 
 ---
 
-**Desenvolvido com ❤️ por Wesley Toss** 
+**Desenvolvido com ❤️ por Wesley Santos** 
