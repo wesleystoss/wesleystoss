@@ -239,6 +239,7 @@ body {
     display: flex;
     gap: 20px;
     margin-top: 15px;
+    justify-content: center;
 }
 
 .profile-stat {
@@ -1335,11 +1336,12 @@ section {
     }
 
     .profile-stats {
-        gap: 20px;
+        justify-content: center;
+        gap: 30px;
     }
 
     .profile-stat .stat-number {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .profile-stat .stat-text {
@@ -1566,11 +1568,12 @@ section {
     }
 
     .profile-stats {
-        gap: 20px;
+        justify-content: center;
+        gap: 30px;
     }
 
     .profile-stat .stat-number {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .profile-stat .stat-text {
@@ -2061,4 +2064,26 @@ body.dark-theme .contact-cta {
 body.dark-theme .contact-cta h4 {
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .value-item {
+    background: #23232b;
+    border: 1px solid #333;
+}
+
+body.dark-theme .value-content h5 {
+    color: #e5e7eb;
+}
+
+body.dark-theme .value-content p {
+    color: #9ca3af;
+}
+
+body.dark-theme .value-item i {
+    color: var(--primary-color);
+}
+
+body.dark-theme .value-item:hover {
+    background: #2d2d35;
+    border-color: var(--primary-color);
 } 
