@@ -72,10 +72,10 @@ wesleystoss/
 - **Google Fonts**: Tipografia Inter
 
 ### **Ferramentas de Negócio**
-- **Salesforce**: CRM e automação de vendas
-- **Zendesk**: Sistema de suporte ao cliente
-- **HubSpot**: Marketing e automação
-- **Blip**: Plataforma de chatbots e automação
+- **Salesforce**: Administrador e Desenvolvedor
+- **Zendesk**: Administrador
+- **HubSpot**: Serviços de integrações e automações de processos
+- **Blip**: Curador de bot
 
 ### **Metodologias e Liderança**
 - **Metodologias Ágeis**: Experiência com Scrum e Kanban
