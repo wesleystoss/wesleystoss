@@ -458,4 +458,61 @@ document.addEventListener('DOMContentLoaded', function() {
             setTheme(false);
         }
     }
-}); 
+});
+
+// Botão Fixo de Contato (Mobile)
+const contactFixedBtn = document.getElementById('contact-fixed-btn');
+
+// Função para controlar a visibilidade do botão fixo
+function toggleContactFixedBtn() {
+    if (window.innerWidth <= 768) {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // Mostrar botão após scrollar 50% da altura da tela
+        if (scrollPosition > windowHeight * 0.5) {
+            contactFixedBtn.classList.add('show');
+        } else {
+            contactFixedBtn.classList.remove('show');
+        }
+        
+        // Ocultar botão quando estiver próximo da seção de contato
+        const contactSection = document.getElementById('contato');
+        if (contactSection) {
+            const contactSectionTop = contactSection.offsetTop;
+            const contactSectionBottom = contactSectionTop + contactSection.offsetHeight;
+            
+            if (scrollPosition + windowHeight > contactSectionTop && scrollPosition < contactSectionBottom) {
+                contactFixedBtn.classList.remove('show');
+            }
+        }
+    } else {
+        // Em desktop, sempre ocultar o botão
+        contactFixedBtn.classList.remove('show');
+    }
+}
+
+// Event listeners para o botão fixo
+if (contactFixedBtn) {
+    // Controlar visibilidade no scroll
+    window.addEventListener('scroll', toggleContactFixedBtn);
+    
+    // Controlar visibilidade no resize da janela
+    window.addEventListener('resize', toggleContactFixedBtn);
+    
+    // Navegar para a seção de contato ao clicar
+    contactFixedBtn.addEventListener('click', () => {
+        const contactSection = document.getElementById('contato');
+        if (contactSection) {
+            const offsetTop = contactSection.offsetTop - 70; // Ajuste para a navbar fixa
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+    
+    // Verificar estado inicial
+    toggleContactFixedBtn();
+} 
