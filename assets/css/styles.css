@@ -1406,76 +1406,66 @@ section {
     }
 
     .theme-toggle-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
-        background: var(--background);
-        border: 1px solid var(--border);
-        color: var(--text-primary);
-        padding: 10px;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: var(--transition);
+        position: relative;
+        margin: 0 0 0 auto;
+        right: 0;
+        top: 0;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
     }
 
-    .navbar {
-        padding: 0 15px;
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+    }
+    .nav-logo {
+        margin-right: 10px;
+    }
+    .hamburger {
+        margin-left: 10px;
+        position: relative;
+        z-index: 2;
+    }
+    .nav-container {
+        gap: 0;
+    }
+    .nav-menu {
+        z-index: 10;
     }
 
-    .project-header {
-        flex-direction: column;
+    .projects-grid {
+        justify-items: center;
         text-align: center;
-        gap: 15px;
     }
-
-    .project-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-
-    .project-title h3 {
-        font-size: 1.2rem;
-    }
-
-    .project-content {
-        text-align: left;
-    }
-
-    .project-content p {
-        font-size: 0.9rem;
-    }
-
+    .project-card,
+    .project-header,
+    .project-content,
+    .project-results,
     .project-tech {
+        text-align: center;
+        align-items: center;
         justify-content: center;
     }
-
     .project-links {
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        text-align: center;
         gap: 10px;
+        width: 100%;
     }
-
-    .project-links .btn-small {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-    }
-
-    .benefits-list {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .contact-cta {
-        padding: 20px;
-    }
-
-    .contact-cta h4 {
-        font-size: 1.2rem;
-    }
-
-    .contact-cta p {
-        font-size: 0.9rem;
+    .project-links .btn-small,
+    .project-links .btn-live {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -1681,7 +1671,7 @@ section {
     }
 
     .contact-cta p {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .contact-method {
@@ -1699,6 +1689,12 @@ section {
 
     .contact-detail {
         font-size: 0.8rem;
+    }
+
+    /* Ajuste adicional para o botão de tema em telas muito pequenas */
+    .theme-toggle-btn {
+        right: 60px; /* Ainda mais à esquerda para telas muito pequenas */
+        padding: 8px; /* Botão um pouco menor */
     }
 }
 
