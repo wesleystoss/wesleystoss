@@ -154,7 +154,7 @@ As cores podem ser facilmente alteradas editando as variáveis CSS no arquivo `s
 ## 📞 Suporte
 
 Para dúvidas ou sugestões sobre o portfólio:
-- **Email**: wesley@email.com
+- **Email**: wesleyrogerio77@gmail.com
 - **LinkedIn**: [linkedin.com/in/wesleysSantos](https://linkedin.com/in/wesleysSantos)
 - **GitHub**: [github.com/wesleysSantos](https://github.com/wesleysSantos)
 

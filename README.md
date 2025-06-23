@@ -95,7 +95,7 @@ As cores podem ser facilmente alteradas editando as variáveis CSS no arquivo `a
 - **WhatsApp**: [wa.me/5561999241137](https://wa.me/5561999241137)
 - **LinkedIn**: [linkedin.com/in/wesley-santos-8b08721a3](https://linkedin.com/in/wesley-santos-8b08721a3)
 - **GitHub**: [github.com/wesleysSantos](https://github.com/wesleysSantos)
-- **Email**: wesley@email.com
+- **Email**: wesleyrogerio77@gmail.com
 
 ## 📄 Licença
 
