@@ -1194,4 +1194,56 @@ body.dark-theme .contact-method.primary-contact {
 }
 body.dark-theme .contact-method.primary-contact i {
     color: #fff;
+}
+
+/* Estilos para botões dos projetos no tema dark */
+body.dark-theme .project-links .btn-small {
+    background: var(--background-alt);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+body.dark-theme .project-links .btn-small:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+body.dark-theme .project-links .btn-small i {
+    color: #fbbf24;
+}
+
+body.dark-theme .project-links .btn-small:hover i {
+    color: #fff;
+}
+
+body.dark-theme .project-links .btn-live {
+    background: var(--background-alt);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+body.dark-theme .project-links .btn-live:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+body.dark-theme .project-links .btn-live i {
+    color: #fbbf24;
+}
+
+body.dark-theme .project-links .btn-live:hover i {
+    color: #fff;
+}
+
+/* Estilos para ícones dos botões dos projetos */
+.project-links .btn-small i,
+.project-links .btn-live i {
+    color: #fbbf24;
+}
+
+.project-links .btn-small:hover i,
+.project-links .btn-live:hover i {
+    color: #fff;
 } 
