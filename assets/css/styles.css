@@ -425,7 +425,7 @@ section {
 /* Projetos Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
 }
 
@@ -458,7 +458,7 @@ section {
 }
 
 .project-content {
-    padding: 30px;
+    padding: 25px;
 }
 
 .project-content h3 {
