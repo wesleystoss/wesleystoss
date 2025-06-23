@@ -69,6 +69,12 @@ e-commerce-basico/
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white)
 
+### **Ferramentas de Negócio**
+![Salesforce](https://img.shields.io/badge/Salesforce-00A1E0?style=for-the-badge&logo=salesforce&logoColor=white)
+![Zendesk](https://img.shields.io/badge/Zendesk-03363D?style=for-the-badge&logo=zendesk&logoColor=white)
+![HubSpot](https://img.shields.io/badge/HubSpot-FF7A59?style=for-the-badge&logo=hubspot&logoColor=white)
+![Blip](https://img.shields.io/badge/Blip-00A1E0?style=for-the-badge&logo=blip&logoColor=white)
+
 ## 📊 Estatísticas do GitHub
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=wesleystoss&show_icons=true&theme=radical)
@@ -78,6 +84,8 @@ e-commerce-basico/
 ## 🎯 Sobre Mim
 
 - 🔥 **Foco**: Desenvolvimento Full Stack
+- 👥 **Liderança**: Experiência em projetos ágeis e sprints
+- 🛠️ **Ferramentas**: Salesforce, Zendesk, HubSpot, Blip
 - 🌱 **Aprendendo**: Novas tecnologias e frameworks
 - 💡 **Interesse**: Criar soluções práticas e escaláveis
 - 🎯 **Objetivo**: Desenvolver projetos que resolvam problemas reais

@@ -63,34 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         observer.observe(el);
     });
+    
+    // Animação dos badges de nível das habilidades
+    const skillItems = document.querySelectorAll('.skill-item');
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    skillItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        skillObserver.observe(item);
+    });
 });
-
-// Animação das barras de habilidade
-const animateSkillBars = () => {
-    const skillBars = document.querySelectorAll('.skill-progress');
-    skillBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0%';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 500);
-    });
-};
-
-// Trigger animação das habilidades quando a seção estiver visível
-const skillsSection = document.querySelector('.skills');
-const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateSkillBars();
-            skillsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-if (skillsSection) {
-    skillsObserver.observe(skillsSection);
-}
 
 // Formulário de contato
 const contactForm = document.getElementById('contactForm');

@@ -71,6 +71,17 @@ wesleystoss/
 - **Font Awesome**: Ícones profissionais
 - **Google Fonts**: Tipografia Inter
 
+### **Ferramentas de Negócio**
+- **Salesforce**: CRM e automação de vendas
+- **Zendesk**: Sistema de suporte ao cliente
+- **HubSpot**: Marketing e automação
+- **Blip**: Plataforma de chatbots e automação
+
+### **Metodologias e Liderança**
+- **Metodologias Ágeis**: Experiência com Scrum e Kanban
+- **Liderança de Projetos**: Gestão de equipes e sprints
+- **Gestão de Produto**: Planejamento e execução de projetos
+
 ## 📱 Responsividade
 
 O portfólio é totalmente responsivo com breakpoints para:
