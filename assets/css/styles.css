@@ -790,6 +790,10 @@ section {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
     .hamburger {
         display: flex;
     }
@@ -829,14 +833,25 @@ section {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 40px;
-        width: 100%;
-        text-align: center;
     }
 
     .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
+        order: 1;
+    }
+    .hero-image {
+        order: 2;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .hero-info {
+        order: 3;
+        margin-top: 20px;
+    }
+
+    .hero-title {
+        word-break: break-word;
+        max-width: 95vw;
+        font-size: 2.2rem;
     }
 
     .hero-subtitle {
@@ -853,14 +868,6 @@ section {
     .hero-buttons {
         justify-content: center;
         gap: 15px;
-    }
-
-    .hero-image {
-        order: -1;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .profile-card {
@@ -948,8 +955,21 @@ section {
     }
 
     .hero-title {
-        font-size: 2rem;
-        line-height: 1.3;
+        order: 1;
+    }
+    .hero-image {
+        order: 2;
+        margin-top: 15px;
+    }
+    .hero-info {
+        order: 3;
+        margin-top: 15px;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+        max-width: 95vw;
+        word-break: break-word;
     }
 
     .hero-subtitle {
