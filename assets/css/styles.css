@@ -722,6 +722,10 @@ section {
     flex-shrink: 0;
 }
 
+.project-title {
+    padding-top: 24px;
+}
+
 .project-title h3 {
     font-size: 1.4rem;
     font-weight: 600;
@@ -2082,4 +2086,21 @@ body.dark-theme .value-item i {
 body.dark-theme .value-item:hover {
     background: #2d2d35;
     border-color: var(--primary-color);
+}
+
+/* Ajuste para evitar sobreposição do badge de destaque com o título */
+.project-card.featured::before {
+    top: 15px;
+    right: 15px;
+    /* já existe, mas vamos garantir espaçamento */
+}
+
+.project-title {
+    padding-top: 24px;
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        padding-top: 32px;
+    }
 } 
