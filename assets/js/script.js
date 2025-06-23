@@ -411,4 +411,12 @@ window.addEventListener('load', () => {
     }
 });
 
-console.log('🚀 Portfólio de Wesley Santos carregado com sucesso!'); 
+console.log('🚀 Portfólio de Wesley Santos carregado com sucesso!');
+
+// Atualizar ano atual no footer
+document.addEventListener('DOMContentLoaded', () => {
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+}); 
