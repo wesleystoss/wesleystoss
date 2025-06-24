@@ -2644,4 +2644,20 @@ body.dark-theme .contact-option:hover {
         text-align: center;
     }
 }
-/* --- FIM HERO REORGANIZADO CENTRALIZADO --- */ 
+/* --- FIM HERO REORGANIZADO CENTRALIZADO --- */
+
+/* --- Destaque de palavras-chave no hero (marca-texto) --- */
+.highlight-bg {
+    background: #fff59d;
+    color: inherit;
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: inherit;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    transition: background 0.2s, color 0.2s;
+    margin: 0 1px;
+    display: inline;
+    color: black;
+}
+/* --- FIM destaque de palavras-chave --- */ 
