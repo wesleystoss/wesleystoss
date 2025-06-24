@@ -42,20 +42,6 @@
                     <h1 class="hero-title">
                         Desenvolvedor <span class="highlight">Full Stack</span> que entrega resultados
                     </h1>
-                    <div class="hero-badges">
-                        <span class="hero-badge">
-                            <i class="fas fa-check-circle"></i>
-                            PHP Especialista
-                        </span>
-                        <span class="hero-badge">
-                            <i class="fas fa-rocket"></i>
-                            Projetos Ágeis
-                        </span>
-                        <span class="hero-badge">
-                            <i class="fas fa-users"></i>
-                            Líder Técnico
-                        </span>
-                    </div>
                 </div>
                 <div class="hero-image">
                     <div class="profile-card">
@@ -79,6 +65,10 @@
                                     <span class="stat-text">Projetos</span>
                                 </div>
                             </div>
+                            <a href="#" class="profile-about-link" onclick="openAboutModal()">
+                                <i class="fas fa-user"></i>
+                                Sobre
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -106,10 +96,6 @@
                         <a href="#sobre" class="btn btn-primary">
                             <i class="fas fa-code"></i>
                             O que eu ofereço
-                        </a>
-                        <a href="#contato" class="btn btn-secondary">
-                            <i class="fas fa-comments"></i>
-                            Contato
                         </a>
                     </div>
                 </div>
@@ -456,16 +442,16 @@
                     </div>
                     <div class="project-content">
                         <p>
-                            Sistema completo de e-commerce em PHP 8.2 com arquitetura MVC. 
-                            Autenticação, carrinho, pagamentos e painel administrativo.
+                            Loja virtual completa para venda de produtos online. Inclui cadastro de clientes, 
+                            carrinho de compras, diferentes formas de pagamento e painel para gerenciar produtos e vendas.
                         </p>
                         <div class="project-results">
-                            <h4>Habilidades Trabalhadas:</h4>
+                            <h4>Tecnologias utilizadas:</h4>
                             <ul class="results-list">
-                                <li><i class="fas fa-check"></i> Arquitetura MVC moderna</li>
-                                <li><i class="fas fa-check"></i> Autenticação e autorização</li>
-                                <li><i class="fas fa-check"></i> Integração com gateways de pagamento</li>
-                                <li><i class="fas fa-check"></i> Painel administrativo completo</li>
+                                <li><i class="fas fa-check"></i> Sistema de cadastro e login de usuários</li>
+                                <li><i class="fas fa-check"></i> Carrinho de compras funcional</li>
+                                <li><i class="fas fa-check"></i> Integração com sistemas de pagamento</li>
+                                <li><i class="fas fa-check"></i> Painel administrativo para gestão</li>
                             </ul>
                         </div>
                         <div class="project-tech">
@@ -500,16 +486,16 @@
                     </div>
                     <div class="project-content">
                         <p>
-                            Sistema de gestão educacional com Clean Architecture, SOLID e testes automatizados. 
-                            Dashboard moderno e relatórios avançados.
+                            Sistema para escolas gerenciarem alunos, turmas e notas. Permite cadastrar estudantes, 
+                            criar turmas, lançar notas e gerar relatórios de desempenho.
                         </p>
                         <div class="project-results">
-                            <h4>Habilidades Trabalhadas:</h4>
+                            <h4>Tecnologias utilizadas:</h4>
                             <ul class="results-list">
-                                <li><i class="fas fa-check"></i> Clean Architecture & SOLID</li>
-                                <li><i class="fas fa-check"></i> Testes automatizados (PHPUnit)</li>
-                                <li><i class="fas fa-check"></i> Design Patterns aplicados</li>
-                                <li><i class="fas fa-check"></i> Dashboard responsivo</li>
+                                <li><i class="fas fa-check"></i> Arquitetura organizada e escalável</li>
+                                <li><i class="fas fa-check"></i> Testes automatizados para garantir qualidade</li>
+                                <li><i class="fas fa-check"></i> Padrões de desenvolvimento modernos</li>
+                                <li><i class="fas fa-check"></i> Interface responsiva e intuitiva</li>
                             </ul>
                         </div>
                         <div class="project-tech">
@@ -544,11 +530,11 @@
                     </div>
                     <div class="project-content">
                         <p>
-                            Site institucional moderno e responsivo para salão de beleza. Design elegante com 
-                            galeria interativa, formulário de contato e integração com WhatsApp.
+                            Site profissional para salão de beleza com design moderno. Inclui galeria de fotos dos trabalhos, 
+                            informações sobre serviços, formulário para agendamento e contato direto via WhatsApp.
                         </p>
                         <div class="project-results">
-                            <h4>Habilidades Trabalhadas:</h4>
+                            <h4>Tecnologias utilizadas:</h4>
                             <ul class="results-list">
                                 <li><i class="fas fa-check"></i> Design responsivo e moderno</li>
                                 <li><i class="fas fa-check"></i> Galeria de imagens interativa</li>
@@ -694,6 +680,37 @@
         </div>
         <div class="toggle-pulse"></div>
     </button>
+
+    <!-- Modal Sobre -->
+    <div id="about-modal" class="about-modal">
+        <div class="about-modal-content">
+            <div class="about-modal-header">
+                <h3>Sobre Wesley Santos</h3>
+                <button class="about-modal-close" onclick="closeAboutModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="about-modal-body">
+                <div class="about-avatar">
+                    <img src="assets/images/profile.jpg" alt="Wesley Santos">
+                </div>
+                <div class="about-bio">
+                    <p>
+                        Desenvolvedor Full Stack apaixonado por criar soluções que fazem a diferença. 
+                        Com mais de 5 anos de experiência, especializei-me em PHP moderno e desenvolvimento web completo.
+                    </p>
+                    <p>
+                        Minha jornada começou com a curiosidade de entender como as coisas funcionam na web. 
+                        Hoje, transformo essa paixão em projetos que resolvem problemas reais para empresas e pessoas.
+                    </p>
+                    <p>
+                        Acredito que código limpo, arquitetura bem pensada e foco no usuário são a base para 
+                        qualquer projeto de sucesso. Sempre em busca de aprender novas tecnologias e melhorar minhas habilidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>

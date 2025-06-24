@@ -237,9 +237,9 @@ body {
 /* Profile Stats */
 .profile-stats {
     display: flex;
-    gap: 20px;
-    margin-top: 15px;
     justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .profile-stat {
@@ -251,15 +251,14 @@ body {
     font-size: 1.8rem;
     font-weight: 700;
     color: #fbbf24;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: 5px;
 }
 
 .profile-stat .stat-text {
-    font-size: 0.8rem;
-    opacity: 0.9;
-    color: white;
-    font-weight: 500;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Hero Achievements */
@@ -353,13 +352,14 @@ body {
 .profile-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px;
+    border-radius: 25px;
+    padding: 50px 40px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 300px;
+    max-width: 350px;
     width: 100%;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .profile-card:hover {
@@ -369,11 +369,11 @@ body {
 }
 
 .profile-avatar {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto 15px;
+    margin: 0 auto 25px;
     border: 4px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: var(--transition);
@@ -395,12 +395,221 @@ body {
 }
 
 .profile-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .profile-info p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.profile-info .hero-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.profile-info .hero-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 20px;
+    border-radius: 20px;
     font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.profile-info .hero-badge:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info .hero-badge i {
+    font-size: 1rem;
+    color: #fbbf24;
+}
+
+/* Link Sobre no Profile Card */
+.profile-about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.profile-about-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-about-link i {
+    font-size: 0.85rem;
+}
+
+/* Modal Sobre */
+.about-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.about-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 0.3s ease;
+}
+
+.about-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.about-modal-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.about-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: var(--transition);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-modal-close:hover {
+    background: #f1f5f9;
+    color: var(--text-primary);
+}
+
+.about-modal-body {
+    padding: 30px;
+}
+
+.about-avatar {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.about-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+}
+
+.about-bio p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.about-bio p:last-child {
+    margin-bottom: 0;
+}
+
+/* Animações da Modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tema Dark para a Modal */
+body.dark-theme .about-modal-content {
+    background: #1e293b;
+    border: 1px solid #334155;
+}
+
+body.dark-theme .about-modal-header {
+    border-bottom-color: #334155;
+}
+
+body.dark-theme .about-modal-header h3 {
+    color: #f1f5f9;
+}
+
+body.dark-theme .about-modal-close {
+    color: #94a3b8;
+}
+
+body.dark-theme .about-modal-close:hover {
+    background: #334155;
+    color: #f1f5f9;
+}
+
+body.dark-theme .about-bio p {
+    color: #cbd5e1;
 }
 
 .scroll-indicator {
@@ -2300,7 +2509,7 @@ body.dark-theme .skills-intro {
 body.dark-theme .skills-toggle {
     background: #1e293b;
     border-color: #6366f1;
-    color: #6366f1;
+    color: #ffffff;
 }
 
 body.dark-theme .skills-toggle:hover {
