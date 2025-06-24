@@ -2660,4 +2660,23 @@ body.dark-theme .contact-option:hover {
     display: inline;
     color: black;
 }
-/* --- FIM destaque de palavras-chave --- */ 
+/* --- FIM destaque de palavras-chave --- */
+
+.surprise-message-bubble {
+    background: #e0e7ff;
+    color: #3730a3;
+    border: 2px solid #6366f1;
+    font-weight: 600;
+    box-shadow: 0 8px 32px rgba(99,102,241,0.18);
+    border-radius: 14px 14px 14px 4px;
+    padding: 12px 18px;
+    font-size: 1.05rem;
+    transition: box-shadow 0.2s, border 0.2s;
+    cursor: pointer;
+    user-select: none;
+    animation: fadeInUp 0.4s;
+}
+.surprise-message-bubble:hover {
+    box-shadow: 0 12px 36px rgba(99,102,241,0.22);
+    border-color: #4f46e5;
+} 

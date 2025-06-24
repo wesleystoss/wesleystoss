@@ -560,6 +560,9 @@ function toggleSkills() {
 
 // Função para mostrar/ocultar o balão de contato
 function toggleContactChat() {
+    // Remove a mensagem surpresa, se existir
+    const surprise = document.getElementById('surprise-message');
+    if (surprise) surprise.remove();
     const chat = document.getElementById('contact-chat');
     if (chat.classList.contains('open')) {
         chat.classList.remove('open');
@@ -599,4 +602,59 @@ document.addEventListener('DOMContentLoaded', () => {
         const frase = frasesImpacto[Math.floor(Math.random() * frasesImpacto.length)];
         fadeInWordsEffect(heroImpacto, frase, 180);
     }
+});
+
+// --- MENSAGEM SURPRESA ACIMA DO BOTÃO DE CHAT ---
+function showSurpriseMessage() {
+    // Evita duplicidade
+    if (document.getElementById('surprise-message')) return;
+
+    const btn = document.getElementById('contact-toggle');
+    if (!btn) return;
+
+    // Cria o container de mensagem igual ao chat
+    const messageContainer = document.createElement('div');
+    messageContainer.className = 'chat-message';
+    messageContainer.style.position = 'fixed';
+    messageContainer.style.right = '48px';
+    messageContainer.style.bottom = '90px';
+    messageContainer.style.zIndex = '1400';
+    messageContainer.style.cursor = 'pointer';
+    messageContainer.style.animation = 'fadeInUp 0.4s';
+    messageContainer.id = 'surprise-message';
+
+    // Responsivo
+    if (window.innerWidth <= 600) {
+        messageContainer.style.right = '24px';
+        messageContainer.style.bottom = '70px';
+        messageContainer.style.maxWidth = '80vw';
+    } else {
+        messageContainer.style.maxWidth = '320px';
+    }
+
+    // Cria o balão igual ao chat
+    const bubble = document.createElement('div');
+    bubble.className = 'message-bubble';
+    bubble.innerHTML = `Olá! 👋 Como posso ajudar seu projeto hoje?`;
+    messageContainer.appendChild(bubble);
+
+    // Remove ao clicar
+    messageContainer.addEventListener('click', () => {
+        messageContainer.style.animation = 'slideOutRight 0.3s';
+        setTimeout(() => messageContainer.remove(), 300);
+    });
+
+    document.body.appendChild(messageContainer);
+
+    // Remove automaticamente após 8 segundos
+    setTimeout(() => {
+        if (messageContainer.parentNode) {
+            messageContainer.style.animation = 'slideOutRight 0.3s';
+            setTimeout(() => messageContainer.remove(), 300);
+        }
+    }, 8000);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(showSurpriseMessage, 10000);
 }); 
