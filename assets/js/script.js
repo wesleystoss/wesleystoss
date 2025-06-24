@@ -728,47 +728,45 @@ function initNavbarEvents() {
         const dropdownToggle = navDropdown.querySelector('.nav-link');
         const dropdownMenu = navDropdown.querySelector('.dropdown-menu');
         
-        // No mobile, adicionar evento de clique para abrir/fechar dropdown
-        if (window.innerWidth <= 768) {
-            dropdownToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                // Fechar outros dropdowns se existirem
-                const allDropdowns = document.querySelectorAll('.nav-dropdown');
-                allDropdowns.forEach(dropdown => {
-                    if (dropdown !== navDropdown) {
-                        dropdown.classList.remove('active');
-                        const otherMenu = dropdown.querySelector('.dropdown-menu');
-                        if (otherMenu) {
-                            otherMenu.style.display = 'none';
-                        }
-                    }
-                });
-                
-                // Toggle do dropdown atual
-                navDropdown.classList.toggle('active');
-                
-                // Mostrar/ocultar menu
-                if (dropdownMenu) {
-                    if (navDropdown.classList.contains('active')) {
-                        dropdownMenu.style.display = 'block';
-                    } else {
-                        dropdownMenu.style.display = 'none';
+        // Adicionar evento de clique para abrir/fechar dropdown (funciona em mobile e desktop)
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Fechar outros dropdowns se existirem
+            const allDropdowns = document.querySelectorAll('.nav-dropdown');
+            allDropdowns.forEach(dropdown => {
+                if (dropdown !== navDropdown) {
+                    dropdown.classList.remove('active');
+                    const otherMenu = dropdown.querySelector('.dropdown-menu');
+                    if (otherMenu) {
+                        otherMenu.style.display = 'none';
                     }
                 }
             });
             
-            // Fechar dropdown ao clicar fora
-            document.addEventListener('click', (e) => {
-                if (!navDropdown.contains(e.target)) {
-                    navDropdown.classList.remove('active');
-                    if (dropdownMenu) {
-                        dropdownMenu.style.display = 'none';
-                    }
+            // Toggle do dropdown atual
+            navDropdown.classList.toggle('active');
+            
+            // Mostrar/ocultar menu
+            if (dropdownMenu) {
+                if (navDropdown.classList.contains('active')) {
+                    dropdownMenu.style.display = 'block';
+                } else {
+                    dropdownMenu.style.display = 'none';
                 }
-            });
-        }
+            }
+        });
+        
+        // Fechar dropdown ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!navDropdown.contains(e.target)) {
+                navDropdown.classList.remove('active');
+                if (dropdownMenu) {
+                    dropdownMenu.style.display = 'none';
+                }
+            }
+        });
     }
 }
 

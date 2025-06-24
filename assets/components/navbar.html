@@ -30,6 +30,9 @@
 .nav-dropdown {
     position: relative;
 }
+.nav-dropdown .nav-link {
+    cursor: pointer;
+}
 .nav-dropdown .dropdown-menu {
     display: none;
     position: absolute;
@@ -69,14 +72,17 @@
         background: none;
         min-width: 0;
         padding: 0;
-        display: none;
+        display: none !important;
     }
     .dropdown-menu a {
         padding-left: 2.2rem;
     }
-    /* Estilos específicos para mobile */
-    .nav-dropdown.active .dropdown-menu {
+    /* Estilos específicos para mobile - maior especificidade */
+    .nav-dropdown.active .dropdown-menu,
+    .nav-menu .nav-dropdown.active .dropdown-menu {
         display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     .nav-dropdown .nav-link {
         cursor: pointer;
@@ -89,7 +95,7 @@
     }
     /* Garantir que o hover não interfira no mobile */
     .nav-dropdown:hover .dropdown-menu {
-        display: none;
+        display: none !important;
     }
     .nav-dropdown.active:hover .dropdown-menu {
         display: block !important;
