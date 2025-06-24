@@ -190,18 +190,6 @@
     </main>
     <div id="footer"></div>
     <script src="../assets/js/script.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const footerEl = document.getElementById('footer');
-        if (footerEl) {
-            fetch('../assets/components/footer.html')
-                .then(res => res.text())
-                .then(html => {
-                    footerEl.innerHTML = html;
-                });
-        }
-    });
-    </script>
     <style>
     @media (max-width: 700px) {
         .hero-cta-mobile {
