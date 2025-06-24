@@ -137,6 +137,8 @@ body {
 }
 
 .hero-container {
+    background: transparent !important;
+    border: none !important;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -2556,4 +2558,214 @@ body.dark-theme .contact-option.primary {
 body.dark-theme .contact-option:hover {
     background: #4f46e5;
     color: #fff;
-} 
+}
+
+/* --- HERO NOVO DISRUPTIVO --- */
+.hero.disruptivo {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #6366f1 0%, #764ba2 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 60px 0;
+    text-align: center;
+}
+.hero-content-novo {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 48px 32px 40px 32px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s cubic-bezier(.23,1.01,.32,1) both;
+}
+.hero-greeting {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 56px;
+}
+.hero-greeting img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    border: 2px solid #fff;
+}
+.hero-desc-novo {
+    font-size: 1.25rem;
+    color: #e0e7ff;
+    margin-bottom: 32px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.hero-actions-novo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+.btn-cta-novo {
+    font-size: 1.1rem;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    background: #fbbf24;
+    color: #1e293b;
+    box-shadow: 0 2px 12px 0 rgba(251,191,36,0.18);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-cta-novo:hover {
+    background: #f59e42;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+.btn-google {
+    background: #fff;
+    color: #222;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-google:hover {
+    background: #f1f5f9;
+    color: #6366f1;
+    transform: translateY(-1px) scale(1.03);
+}
+@media (max-width: 700px) {
+    .hero-content-novo {
+        padding: 32px 10px 28px 10px;
+    }
+    .hero-greeting {
+        font-size: 1.5rem;
+    }
+    .hero-desc-novo {
+        font-size: 1rem;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* --- FIM HERO NOVO --- */
+
+/* --- HERO DESC LIVRE --- */
+.hero-desc-livre {
+    width: 100%;
+    margin: 0 0 38px 0;
+    color: #fff;
+    font-size: 2.1rem;
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    padding: 0 0 0 0;
+    box-sizing: border-box;
+}
+@media (max-width: 900px) {
+    .hero-desc-livre {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+}
+.hero-content-novo {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 48px 0 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 48px;
+}
+.hero-profile-img {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-profile-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.18);
+    border: 4px solid #fff;
+    background: #f1f5f9;
+}
+.hero-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.hero-greeting {
+    margin-bottom: 28px;
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: left;
+    width: 100%;
+}
+.hero-desc-livre {
+    width: 100%;
+    margin: 0 0 38px 0;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero-actions-novo {
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+@media (max-width: 900px) {
+    .hero-content-novo {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 0 10px 0 10px;
+    }
+    .hero-profile-img img {
+        width: 120px;
+        height: 120px;
+    }
+    .hero-main-content {
+        align-items: center;
+    }
+    .hero-greeting, .hero-desc-livre {
+        text-align: center;
+    }
+    .hero-actions-novo {
+        justify-content: center;
+    }
+}
+/* --- FIM HERO DESC LIVRE --- */ 

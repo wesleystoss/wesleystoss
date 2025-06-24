@@ -221,10 +221,9 @@ notificationStyles.textContent = `
 document.head.appendChild(notificationStyles);
 
 // Efeito de digitação no título
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
+function typeWriter(element, text, speed = 45) {
     element.innerHTML = '';
-    
+    let i = 0;
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -232,7 +231,6 @@ function typeWriter(element, text, speed = 100) {
             setTimeout(type, speed);
         }
     }
-    
     type();
 }
 
@@ -568,4 +566,37 @@ function toggleContactChat() {
     } else {
         chat.classList.add('open');
     }
-} 
+}
+
+// --- HERO IMPACTANTE: Saudação aleatória com efeito de digitação ---
+const frasesImpacto = [
+    'Pronto para ver inovação de verdade?',
+    'Você nunca viu um portfólio assim!',
+    'Prepare-se para se surpreender!',
+    'Bem-vindo ao universo de soluções digitais!',
+    'O futuro do desenvolvimento começa aqui.',
+    'Transformando ideias em experiências digitais.',
+    'Soluções criativas para desafios reais.',
+    'Inovação, tecnologia e paixão pelo que faço.'
+];
+
+function typeWriter(element, text, speed = 45) {
+    element.innerHTML = '';
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const heroImpacto = document.getElementById('hero-impacto');
+    if (heroImpacto) {
+        const frase = frasesImpacto[Math.floor(Math.random() * frasesImpacto.length)];
+        typeWriter(heroImpacto, frase);
+    }
+}); 
