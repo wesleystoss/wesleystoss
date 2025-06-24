@@ -20,7 +20,6 @@
                 <li><a href="#inicio" class="nav-link">Início</a></li>
                 <li><a href="#sobre" class="nav-link">O que ofereço</a></li>
                 <li><a href="#projetos" class="nav-link">Projetos</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="theme-toggle" aria-label="Alternar tema" class="theme-toggle-btn">
@@ -579,62 +578,7 @@
     </section>
 
     <!-- Seção Contato -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2 class="section-title">Vamos Conversar?</h2>
-            <p class="section-subtitle">Pronto para transformar seu projeto em realidade</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-intro">
-                        <h3>Disponível para novos projetos</h3>
-                        <p>
-                            Especializado em e-commerce, sistemas de gestão e integrações empresariais. 
-                            Resposta em até 2 horas via WhatsApp.
-                        </p>
-                    </div>
-
-                    <div class="contact-cta">
-                        <h4>Vamos começar hoje?</h4>
-                        <p>
-                            Me envie uma mensagem e vamos discutir como posso ajudar seu projeto!
-                        </p>
-                    </div>
-
-                    <div class="contact-methods">
-                        <a href="https://wa.me/556199241137" target="_blank" class="contact-method primary-contact">
-                            <i class="fab fa-whatsapp"></i>
-                            <div class="contact-method-info">
-                                <span class="contact-label">WhatsApp (Principal)</span>
-                                <span class="contact-detail">Resposta em 2h</span>
-                            </div>
-                        </a>
-                        <a href="https://linkedin.com/in/wesley-santos-8b08721a3/" target="_blank" class="contact-method">
-                            <i class="fab fa-linkedin"></i>
-                            <div class="contact-method-info">
-                                <span class="contact-label">LinkedIn</span>
-                                <span class="contact-detail">Perfil profissional</span>
-                            </div>
-                        </a>
-                        <a href="mailto:wesleyrogerio77@gmail.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div class="contact-method-info">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-detail">wesleyrogerio77@gmail.com</span>
-                            </div>
-                        </a>
-                        <a href="https://github.com/wesleysSantos" target="_blank" class="contact-method">
-                            <i class="fab fa-github"></i>
-                            <div class="contact-method-info">
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-detail">Portfólio de código</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- (Removida para usar apenas o balão flutuante) -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -659,10 +603,96 @@
         </div>
     </footer>
 
-    <!-- Botão Fixo de Contato (Mobile) -->
-    <button id="contact-fixed-btn" class="contact-fixed-btn" aria-label="Ir para contato">
-        <i class="fas fa-comments"></i>
-        <span>Contato</span>
+    <!-- Balão de Contato Flutuante -->
+    <div id="contact-chat" class="contact-chat">
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <img src="assets/images/profile.jpg" alt="Wesley Santos" class="chat-avatar-img">
+                <div class="chat-status">
+                    <span class="status-dot"></span>
+                </div>
+            </div>
+            <div class="chat-info">
+                <h4>Wesley Santos</h4>
+                <p>Disponível para novos projetos</p>
+            </div>
+            <button class="chat-close" onclick="toggleContactChat()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chat-content">
+            <div class="chat-message">
+                <div class="message-bubble">
+                    <p>Olá! 👋 Como posso ajudar seu projeto hoje?</p>
+                    <span class="message-time">Agora</span>
+                </div>
+            </div>
+            
+            <div class="contact-options">
+                <h5>Escolha como prefere conversar:</h5>
+                
+                <a href="https://wa.me/556199241137" target="_blank" class="contact-option primary">
+                    <div class="option-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="option-content">
+                        <h6>WhatsApp (Principal)</h6>
+                        <p>Resposta em até 2 horas</p>
+                    </div>
+                    <div class="option-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://linkedin.com/in/wesley-santos-8b08721a3/" target="_blank" class="contact-option">
+                    <div class="option-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="option-content">
+                        <h6>LinkedIn</h6>
+                        <p>Perfil profissional</p>
+                    </div>
+                    <div class="option-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="mailto:wesleyrogerio77@gmail.com" class="contact-option">
+                    <div class="option-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="option-content">
+                        <h6>Email</h6>
+                        <p>wesleyrogerio77@gmail.com</p>
+                    </div>
+                    <div class="option-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/wesleysSantos" target="_blank" class="contact-option">
+                    <div class="option-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="option-content">
+                        <h6>GitHub</h6>
+                        <p>Portfólio de código</p>
+                    </div>
+                    <div class="option-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão de Contato Flutuante -->
+    <button id="contact-toggle" class="contact-toggle" onclick="toggleContactChat()" aria-label="Abrir chat de contato">
+        <div class="toggle-icon">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="toggle-pulse"></div>
     </button>
 
     <script src="assets/js/script.js"></script>

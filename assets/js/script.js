@@ -558,4 +558,14 @@ function toggleSkills() {
             behavior: 'smooth'
         });
     }
+}
+
+// Função para mostrar/ocultar o balão de contato
+function toggleContactChat() {
+    const chat = document.getElementById('contact-chat');
+    if (chat.classList.contains('open')) {
+        chat.classList.remove('open');
+    } else {
+        chat.classList.add('open');
+    }
 } 
