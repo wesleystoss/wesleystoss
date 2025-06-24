@@ -568,10 +568,10 @@ function toggleContactChat() {
     }
 }
 
-// --- HERO IMPACTANTE: Saudação aleatória com efeito de digitação ---
+// --- HERO IMPACTANTE: Saudação de impacto com efeito fade-in por palavra ---
 const frasesImpacto = [
-    'Pronto para ver inovação de verdade?',
     'Você nunca viu um portfólio assim!',
+    'Pronto para ver inovação de verdade?',
     'Prepare-se para se surpreender!',
     'Bem-vindo ao universo de soluções digitais!',
     'O futuro do desenvolvimento começa aqui.',
@@ -580,23 +580,23 @@ const frasesImpacto = [
     'Inovação, tecnologia e paixão pelo que faço.'
 ];
 
-function typeWriter(element, text, speed = 45) {
-    element.innerHTML = '';
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
+function fadeInWordsEffect(element, text, speed = 180) {
+    const words = text.split(' ');
+    element.innerHTML = words.map(word => `<span class="fade-word" style="opacity:0;display:inline-block;transform:translateY(16px);">${word}</span>`).join(' ');
+    const spans = element.querySelectorAll('.fade-word');
+    spans.forEach((span, i) => {
+        setTimeout(() => {
+            span.style.transition = 'opacity 0.5s cubic-bezier(.23,1.01,.32,1), transform 0.5s cubic-bezier(.23,1.01,.32,1)';
+            span.style.opacity = 1;
+            span.style.transform = 'translateY(0)';
+        }, i * speed);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const heroImpacto = document.getElementById('hero-impacto');
     if (heroImpacto) {
         const frase = frasesImpacto[Math.floor(Math.random() * frasesImpacto.length)];
-        typeWriter(heroImpacto, frase);
+        fadeInWordsEffect(heroImpacto, frase, 180);
     }
 }); 
