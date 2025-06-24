@@ -2692,4 +2692,16 @@ body.dark-theme .contact-options h5 {
 .surprise-message-bubble:hover {
     box-shadow: 0 12px 36px rgba(99,102,241,0.22);
     border-color: #4f46e5;
+}
+
+body.dark-theme .nav-dropdown .dropdown-menu {
+    background: var(--background-alt);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+}
+body.dark-theme .dropdown-menu a {
+    color: var(--text-primary);
+}
+body.dark-theme .dropdown-menu a:hover {
+    background: var(--primary-color);
+    color: #fff;
 } 

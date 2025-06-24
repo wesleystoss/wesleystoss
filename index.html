@@ -11,28 +11,40 @@
 </head>
 <body>
     <!-- Navegação -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span>WS</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#inicio" class="nav-link">Início</a></li>
-                <li><a href="#sobre" class="nav-link">O que ofereço</a></li>
-                <li><a href="#projetos" class="nav-link">Projetos</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button id="theme-toggle" aria-label="Alternar tema" class="theme-toggle-btn">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar"></div>
+    <script>
+    // Após o carregamento do navbar, insere o botão de tema apenas no index
+    window.addEventListener('DOMContentLoaded', function() {
+        const navbarEl = document.getElementById('navbar');
+        if (navbarEl) {
+            const observer = new MutationObserver(() => {
+                const navActions = navbarEl.querySelector('.nav-actions');
+                if (navActions && !navActions.querySelector('#theme-toggle')) {
+                    const btn = document.createElement('button');
+                    btn.id = 'theme-toggle';
+                    btn.className = 'theme-toggle-btn';
+                    btn.setAttribute('aria-label', 'Alternar tema');
+                    btn.innerHTML = '<i class="fas fa-moon"></i>';
+                    navActions.insertBefore(btn, navActions.firstChild);
+                    // Adiciona evento de alternância de tema
+                    btn.addEventListener('click', function() {
+                        document.body.classList.toggle('dark-theme');
+                        // Troca o ícone
+                        const icon = btn.querySelector('i');
+                        if (document.body.classList.contains('dark-theme')) {
+                            icon.classList.remove('fa-moon');
+                            icon.classList.add('fa-sun');
+                        } else {
+                            icon.classList.remove('fa-sun');
+                            icon.classList.add('fa-moon');
+                        }
+                    });
+                }
+            });
+            observer.observe(navbarEl, { childList: true, subtree: true });
+        }
+    });
+    </script>
 
     <!-- Seção Hero IMPACTANTE -->
     <section id="inicio" class="hero disruptivo">
@@ -641,6 +653,6 @@
         <div class="toggle-pulse"></div>
     </button>
 
-    <script src="assets/js/script.js?v=1"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html> 

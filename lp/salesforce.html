@@ -26,10 +26,12 @@
                         <li class="hero-badge"><i class="fas fa-building"></i> Atuação em empresa de grande porte</li>
                         <li class="hero-badge"><i class="fas fa-bolt"></i> Foco em resultado real</li>
                     </ul>
-                    <a href="#contato" class="btn btn-primary" style="margin-top: 1rem;">Quero transformar meu negócio</a>
                 </div>
                 <div style="flex: 1 1 350px; min-width: 300px; text-align: center; display: flex; flex-direction: column; align-items: center;">
                     <img src="../assets/images/salesforce-logo.png" alt="Salesforce Logo" style="max-width: 180px; height: auto; margin-bottom: 1.2rem;">
+                </div>
+                <div class="hero-cta-mobile" style="width: 100%; display: flex; justify-content: center; margin-top: 1.5rem;">
+                    <a href="#contato" class="btn btn-primary">Quero transformar meu negócio</a>
                 </div>
             </div>
         </section>
@@ -188,5 +190,35 @@
     </main>
     <div id="footer"></div>
     <script src="../assets/js/script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const footerEl = document.getElementById('footer');
+        if (footerEl) {
+            fetch('../assets/components/footer.html')
+                .then(res => res.text())
+                .then(html => {
+                    footerEl.innerHTML = html;
+                });
+        }
+    });
+    </script>
+    <style>
+    @media (max-width: 700px) {
+        .hero-cta-mobile {
+            margin-top: 2.2rem !important;
+            justify-content: center !important;
+            display: flex !important;
+            width: 100% !important;
+        }
+        .hero-cta-mobile .btn-primary {
+            width: 90vw;
+            max-width: 340px;
+            font-size: 1.1rem;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    </style>
 </body>
 </html> 
