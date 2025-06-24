@@ -181,6 +181,7 @@
                 .then(res => res.text())
                 .then(html => {
                     footerEl.innerHTML = html;
+                    if (typeof updateFooterYear === 'function') updateFooterYear();
                 });
         }
     });

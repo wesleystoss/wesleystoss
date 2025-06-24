@@ -411,13 +411,14 @@ window.addEventListener('load', () => {
 
 console.log('🚀 Portfólio de Wesley Santos carregado com sucesso!');
 
-// Atualizar ano atual no footer
-document.addEventListener('DOMContentLoaded', () => {
-    const currentYearElement = document.getElementById('currentYear');
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
+// Atualizar automaticamente o ano do copyright no footer
+function updateFooterYear() {
+    var yearSpan = document.getElementById('footer-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
-});
+}
+document.addEventListener('DOMContentLoaded', updateFooterYear);
 
 // Alternância de tema dark/light
 document.addEventListener('DOMContentLoaded', function() {
