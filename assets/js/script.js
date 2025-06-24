@@ -221,10 +221,9 @@ notificationStyles.textContent = `
 document.head.appendChild(notificationStyles);
 
 // Efeito de digitação no título
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
+function typeWriter(element, text, speed = 45) {
     element.innerHTML = '';
-    
+    let i = 0;
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -232,7 +231,6 @@ function typeWriter(element, text, speed = 100) {
             setTimeout(type, speed);
         }
     }
-    
     type();
 }
 
@@ -562,10 +560,101 @@ function toggleSkills() {
 
 // Função para mostrar/ocultar o balão de contato
 function toggleContactChat() {
+    // Remove a mensagem surpresa, se existir
+    const surprise = document.getElementById('surprise-message');
+    if (surprise) surprise.remove();
     const chat = document.getElementById('contact-chat');
     if (chat.classList.contains('open')) {
         chat.classList.remove('open');
     } else {
         chat.classList.add('open');
     }
-} 
+}
+
+// --- HERO IMPACTANTE: Saudação de impacto com efeito fade-in por palavra ---
+const frasesImpacto = [
+    'Você nunca viu um portfólio assim!',
+    'Pronto para ver inovação de verdade?',
+    'Prepare-se para se surpreender!',
+    'Bem-vindo ao universo de soluções digitais!',
+    'O futuro do desenvolvimento começa aqui.',
+    'Transformando ideias em experiências digitais.',
+    'Soluções criativas para desafios reais.',
+    'Inovação, tecnologia e paixão pelo que faço.'
+];
+
+function fadeInWordsEffect(element, text, speed = 180) {
+    const words = text.split(' ');
+    element.innerHTML = words.map(word => `<span class="fade-word" style="opacity:0;display:inline-block;transform:translateY(16px);">${word}</span>`).join(' ');
+    const spans = element.querySelectorAll('.fade-word');
+    spans.forEach((span, i) => {
+        setTimeout(() => {
+            span.style.transition = 'opacity 0.5s cubic-bezier(.23,1.01,.32,1), transform 0.5s cubic-bezier(.23,1.01,.32,1)';
+            span.style.opacity = 1;
+            span.style.transform = 'translateY(0)';
+        }, i * speed);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const heroImpacto = document.getElementById('hero-impacto');
+    if (heroImpacto) {
+        const frase = frasesImpacto[Math.floor(Math.random() * frasesImpacto.length)];
+        fadeInWordsEffect(heroImpacto, frase, 180);
+    }
+});
+
+// --- MENSAGEM SURPRESA ACIMA DO BOTÃO DE CHAT ---
+function showSurpriseMessage() {
+    // Evita duplicidade
+    if (document.getElementById('surprise-message')) return;
+
+    const btn = document.getElementById('contact-toggle');
+    if (!btn) return;
+
+    // Cria o container de mensagem igual ao chat
+    const messageContainer = document.createElement('div');
+    messageContainer.className = 'chat-message';
+    messageContainer.style.position = 'fixed';
+    messageContainer.style.right = '48px';
+    messageContainer.style.bottom = '90px';
+    messageContainer.style.zIndex = '1400';
+    messageContainer.style.cursor = 'pointer';
+    messageContainer.style.animation = 'fadeInUp 0.4s';
+    messageContainer.id = 'surprise-message';
+
+    // Responsivo
+    if (window.innerWidth <= 600) {
+        messageContainer.style.right = '24px';
+        messageContainer.style.bottom = '70px';
+        messageContainer.style.maxWidth = '80vw';
+    } else {
+        messageContainer.style.maxWidth = '320px';
+    }
+
+    // Cria o balão igual ao chat
+    const bubble = document.createElement('div');
+    bubble.className = 'message-bubble';
+    bubble.innerHTML = `Olá! 👋 Como posso ajudar seu projeto hoje?`;
+    messageContainer.appendChild(bubble);
+
+    // Remove ao clicar
+    messageContainer.addEventListener('click', () => {
+        messageContainer.style.animation = 'slideOutRight 0.3s';
+        setTimeout(() => messageContainer.remove(), 300);
+    });
+
+    document.body.appendChild(messageContainer);
+
+    // Remove automaticamente após 8 segundos
+    setTimeout(() => {
+        if (messageContainer.parentNode) {
+            messageContainer.style.animation = 'slideOutRight 0.3s';
+            setTimeout(() => messageContainer.remove(), 300);
+        }
+    }, 8000);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(showSurpriseMessage, 10000);
+}); 

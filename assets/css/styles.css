@@ -137,6 +137,8 @@ body {
 }
 
 .hero-container {
+    background: transparent !important;
+    border: none !important;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -2556,4 +2558,125 @@ body.dark-theme .contact-option.primary {
 body.dark-theme .contact-option:hover {
     background: #4f46e5;
     color: #fff;
+}
+
+/* --- HERO REORGANIZADO CENTRALIZADO --- */
+.hero-greeting-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-greeting {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+}
+.hero-apresentacao {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+    justify-content: center;
+}
+.hero-profile-img {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-profile-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.18);
+    border: 4px solid #fff;
+    background: #f1f5f9;
+}
+.hero-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 600px;
+    width: 100%;
+}
+.hero-desc-livre {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media (max-width: 900px) {
+    .hero-greeting-container {
+        max-width: 98vw;
+    }
+    .hero-apresentacao {
+        flex-direction: column;
+        gap: 24px;
+        max-width: 98vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-profile-img img {
+        width: 120px;
+        height: 120px;
+    }
+    .hero-main-content {
+        max-width: 100%;
+        align-items: center;
+    }
+    .hero-greeting, .hero-desc-livre {
+        text-align: center;
+    }
+}
+/* --- FIM HERO REORGANIZADO CENTRALIZADO --- */
+
+/* --- Destaque de palavras-chave no hero (marca-texto) --- */
+.highlight-bg {
+    background: #fff59d;
+    color: inherit;
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: inherit;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    transition: background 0.2s, color 0.2s;
+    margin: 0 1px;
+    display: inline;
+    color: black;
+}
+/* --- FIM destaque de palavras-chave --- */
+
+.surprise-message-bubble {
+    background: #e0e7ff;
+    color: #3730a3;
+    border: 2px solid #6366f1;
+    font-weight: 600;
+    box-shadow: 0 8px 32px rgba(99,102,241,0.18);
+    border-radius: 14px 14px 14px 4px;
+    padding: 12px 18px;
+    font-size: 1.05rem;
+    transition: box-shadow 0.2s, border 0.2s;
+    cursor: pointer;
+    user-select: none;
+    animation: fadeInUp 0.4s;
+}
+.surprise-message-bubble:hover {
+    box-shadow: 0 12px 36px rgba(99,102,241,0.22);
+    border-color: #4f46e5;
 } 
