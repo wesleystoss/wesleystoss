@@ -475,10 +475,20 @@ section {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.about-text, .about-value {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* About Intro */
@@ -530,30 +540,56 @@ section {
 
 .value-propositions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center;
 }
 
+@media (max-width: 1000px) {
+  .value-propositions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .value-propositions {
+    grid-template-columns: 1fr;
+  }
+}
 .value-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px;
     background: white;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: var(--shadow);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
     transition: var(--transition);
 }
-
 .value-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
 
 .value-item i {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
     color: var(--primary-color);
-    margin-top: 2px;
+    background: var(--background-alt);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
 }
 
 .value-content h5 {
@@ -1391,8 +1427,15 @@ section {
     }
 
     .value-propositions {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .value-item {
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+        text-align: left;
     }
 
     .about-stats {
@@ -2103,4 +2146,18 @@ body.dark-theme .value-item:hover {
     .project-title {
         padding-top: 32px;
     }
+}
+
+@media (max-width: 900px) {
+  .value-propositions {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .value-item {
+    max-width: 95vw;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
 } 
