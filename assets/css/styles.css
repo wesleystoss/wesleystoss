@@ -2389,6 +2389,7 @@ body.dark-theme .skills-toggle:hover {
     position: relative;
 }
 .chat-avatar {
+    position: relative;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -2404,16 +2405,25 @@ body.dark-theme .skills-toggle:hover {
 }
 .chat-status {
     position: absolute;
-    bottom: 8px;
-    left: 38px;
+    left: 10px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    z-index: 3;
 }
-.status-dot {
-    width: 10px;
-    height: 10px;
+.chat-status .status-dot {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
     background: #10b981;
     border-radius: 50%;
     border: 2px solid #fff;
     display: inline-block;
+    box-shadow: 0 0 4px #10b98199;
+    animation: none;
 }
 .chat-info h4 {
     font-size: 1.1rem;
@@ -2557,6 +2567,9 @@ body.dark-theme .contact-option.primary {
 }
 body.dark-theme .contact-option:hover {
     background: #4f46e5;
+    color: #fff;
+}
+body.dark-theme .contact-options h5 {
     color: #fff;
 }
 

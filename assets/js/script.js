@@ -605,12 +605,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- MENSAGEM SURPRESA ACIMA DO BOTÃO DE CHAT ---
+const mensagensPersuasivas = [
+    'Seu projeto merece destaque! Fale comigo e veja como posso ajudar.',
+    'Transforme sua ideia em realidade. Clique aqui e vamos conversar!',
+    'Precisa de um site profissional? Eu posso resolver para você.',
+    'Não perca tempo: soluções sob medida para o seu negócio, é só chamar!',
+    'Quer resultados reais na internet? Entre em contato agora mesmo!',
+    'Atendimento rápido e personalizado. Clique para conversar comigo!'
+];
+
+let ultimaMensagemIndex = -1;
+let surpriseInterval = null;
+
 function showSurpriseMessage() {
     // Evita duplicidade
     if (document.getElementById('surprise-message')) return;
 
     const btn = document.getElementById('contact-toggle');
     if (!btn) return;
+
+    // Sorteia uma mensagem diferente da última
+    let index;
+    do {
+        index = Math.floor(Math.random() * mensagensPersuasivas.length);
+    } while (index === ultimaMensagemIndex && mensagensPersuasivas.length > 1);
+    ultimaMensagemIndex = index;
+    const mensagem = mensagensPersuasivas[index];
 
     // Cria o container de mensagem igual ao chat
     const messageContainer = document.createElement('div');
@@ -635,7 +655,7 @@ function showSurpriseMessage() {
     // Cria o balão igual ao chat
     const bubble = document.createElement('div');
     bubble.className = 'message-bubble';
-    bubble.innerHTML = `Olá! 👋 Como posso ajudar seu projeto hoje?`;
+    bubble.innerHTML = mensagem;
     messageContainer.appendChild(bubble);
 
     // Remove ao clicar
@@ -655,6 +675,20 @@ function showSurpriseMessage() {
     }, 8000);
 }
 
+// Exibe a primeira mensagem após 10 segundos e depois rotaciona a cada 30-50 segundos (aleatório)
 window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(showSurpriseMessage, 10000);
+    function agendarNovaMensagem() {
+        // Não exibe se o chat estiver aberto
+        const chat = document.getElementById('contact-chat');
+        if (chat && chat.classList.contains('open')) {
+            // Tenta novamente depois de um tempo
+            surpriseInterval = setTimeout(agendarNovaMensagem, 10000);
+            return;
+        }
+        showSurpriseMessage();
+        // Próxima mensagem entre 30 e 50 segundos
+        const proximoTempo = 30000 + Math.random() * 20000;
+        surpriseInterval = setTimeout(agendarNovaMensagem, proximoTempo);
+    }
+    setTimeout(agendarNovaMensagem, 10000);
 }); 
