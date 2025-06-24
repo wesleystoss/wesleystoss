@@ -146,7 +146,7 @@ body {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 60px;
     align-items: center;
 }
@@ -758,10 +758,26 @@ section {
 }
 
 @media (max-width: 1000px) {
-  .value-propositions {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .hero-text {
+        grid-column: 1 / -1;
+        text-align: center;
+        order: 1;
+    }
+    
+    .hero-image {
+        order: 2;
+    }
+    
+    .hero-info {
+        order: 3;
+    }
 }
+
 @media (max-width: 700px) {
   .value-propositions {
     grid-template-columns: 1fr;
@@ -1584,6 +1600,7 @@ section {
         overflow-x: hidden;
         font-size: 14px;
     }
+    
     .hamburger {
         display: flex;
     }
@@ -1595,15 +1612,18 @@ section {
         height: 70px;
         padding: 0 10px;
     }
+    
     .nav-logo {
         margin: 0;
     }
+    
     .nav-actions {
         display: flex;
         align-items: center;
         gap: 10px;
         margin-left: auto;
     }
+    
     .theme-toggle-btn {
         position: static;
         margin: 0;
@@ -1615,6 +1635,7 @@ section {
         justify-content: center;
         z-index: 1;
     }
+    
     .hamburger {
         margin: 0;
         position: static;
@@ -1654,22 +1675,22 @@ section {
         text-align: center;
     }
 
-    .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
+    .hero-text {
+        order: 1;
     }
 
     .hero-image {
-        order: -1;
+        order: 2;
     }
 
     .hero-info {
-        order: 2;
+        order: 3;
     }
 
     .hero-title {
         font-size: 2.2rem;
         line-height: 1.3;
+        margin-bottom: 15px;
     }
 
     .hero-badges {
@@ -1796,6 +1817,7 @@ section {
         justify-items: center;
         text-align: center;
     }
+    
     .project-card,
     .project-header,
     .project-content,
@@ -1805,6 +1827,7 @@ section {
         align-items: center;
         justify-content: center;
     }
+    
     .project-links {
         flex-direction: column;
         align-items: center;
@@ -1813,6 +1836,7 @@ section {
         gap: 10px;
         width: 100%;
     }
+    
     .project-links .btn-small,
     .project-links .btn-live {
         justify-content: center;
@@ -2410,14 +2434,6 @@ body.dark-theme .project-links .btn-small:hover {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
-}
-
-body.dark-theme .project-links .btn-small i {
-    color: #e5e7eb;
-}
-
-body.dark-theme .project-links .btn-small:hover i {
-    color: white;
 }
 
 body.dark-theme .contact-cta {
