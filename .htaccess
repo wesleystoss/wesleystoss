@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Remove .html da URL para páginas em /lp/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^lp/([a-zA-Z0-9_-]+)/?$ lp/$1.html [L]
+
+# Opcional: redireciona URLs com .html para sem .html (SEO)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/lp/([a-zA-Z0-9_-]+)\.html [NC]
+RewriteRule ^lp/([a-zA-Z0-9_-]+)\.html$ /lp/$1 [R=301,L] 
