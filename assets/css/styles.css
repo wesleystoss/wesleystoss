@@ -932,11 +932,112 @@ section {
     font-weight: 600;
 }
 
-/* Habilidades Section */
+/* Skills Section */
 .skills {
+    padding: 80px 0;
     background: var(--background-alt);
 }
 
+/* Visualização Simplificada */
+.skills-simple {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills-overview {
+    text-align: center;
+}
+
+.skills-intro {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.skills-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.skill-highlight {
+    background: var(--background);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+.skill-highlight:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.highlight-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.highlight-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.highlight-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.skills-toggle {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    border-radius: 25px;
+    transition: var(--transition);
+    background: var(--background);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.skills-toggle:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.skills-toggle i {
+    margin-right: 8px;
+}
+
+/* Visualização Detalhada */
+.skills-detailed {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.skills-detailed .skills-toggle {
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Visualização Detalhada - Estilos das Categorias */
 .skills-content {
     display: grid;
     gap: 40px;
@@ -946,7 +1047,6 @@ section {
     font-size: 1.4rem;
     margin-bottom: 20px;
     color: var(--text-primary);
-    text-align: center;
 }
 
 .skills-grid {
@@ -1449,8 +1549,7 @@ section {
     }
 
     .project-card.featured::before {
-        font-size: 0.7rem;
-        padding: 3px 8px;
+        display: none;
     }
 
     .skills-grid {
@@ -1465,12 +1564,11 @@ section {
     }
 
     .scroll-indicator {
-        bottom: 20px;
+        display: none;
     }
 
     .scroll-arrow {
-        width: 20px;
-        height: 20px;
+        display: none;
     }
 
     body.dark-theme .nav-menu {
@@ -1518,7 +1616,7 @@ section {
 
 @media (max-width: 480px) {
     .hero {
-        padding: 100px 0 40px 0;
+        padding: 70px 0 30px 0;
     }
 
     .hero-container {
@@ -1526,78 +1624,66 @@ section {
     }
 
     .hero-title {
-        font-size: 2rem;
-        line-height: 1.2;
+        font-size: 1.8rem;
     }
 
     .hero-badges {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
     }
 
     .hero-badge {
-        font-size: 0.8rem;
-        padding: 6px 12px;
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
     }
 
     .hero-achievements {
         flex-direction: column;
-        align-items: center;
         gap: 15px;
     }
 
     .achievement-item {
-        font-size: 0.85rem;
+        width: 100%;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 12px;
+        font-size: 1rem;
     }
 
     .hero-description {
         font-size: 0.9rem;
-        margin-bottom: 25px;
     }
 
     .section-title {
-        font-size: 2rem;
-        margin-bottom: 15px;
+        font-size: 1.8rem;
     }
 
     .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 40px;
+        font-size: 0.95rem;
     }
 
     .hero-buttons {
         flex-direction: column;
-        gap: 12px;
-        align-items: center;
+        gap: 15px;
     }
 
     .btn {
         width: 100%;
-        max-width: 250px;
         justify-content: center;
-        padding: 15px 20px;
     }
 
     .profile-card {
         max-width: 280px;
-        padding: 20px 15px;
     }
 
     .profile-avatar {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 12px;
+        width: 70px;
+        height: 70px;
     }
 
     .profile-info h3 {
-        font-size: 1.2rem;
-        margin-bottom: 4px;
+        font-size: 1.1rem;
     }
 
     .profile-info p {
@@ -1605,12 +1691,11 @@ section {
     }
 
     .profile-stats {
-        justify-content: center;
-        gap: 30px;
+        gap: 15px;
     }
 
     .profile-stat .stat-number {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .profile-stat .stat-text {
@@ -1618,41 +1703,35 @@ section {
     }
 
     .scroll-indicator {
-        bottom: 15px;
+        display: none;
     }
 
     .scroll-arrow {
-        width: 18px;
-        height: 18px;
+        display: none;
     }
 
     .project-content p {
-        font-size: 0.85rem;
-        line-height: 1.5;
+        font-size: 0.9rem;
     }
 
     .project-tech {
-        gap: 6px;
+        flex-wrap: wrap;
     }
 
     .tech-tag {
-        font-size: 0.75rem;
-        padding: 4px 8px;
+        font-size: 0.7rem;
     }
 
     .project-links {
         flex-direction: column;
-        gap: 8px;
     }
 
     .project-links .btn-small {
         width: 100%;
-        justify-content: center;
-        padding: 12px 16px;
     }
 
     .value-propositions {
-        gap: 12px;
+        grid-template-columns: 1fr;
     }
 
     .value-item {
@@ -1660,7 +1739,7 @@ section {
     }
 
     .value-item i {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .value-content h5 {
@@ -1673,15 +1752,14 @@ section {
 
     .about-stats {
         grid-template-columns: 1fr;
-        gap: 12px;
     }
 
     .stat-card {
-        padding: 20px 15px;
+        padding: 20px;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .stat-label {
@@ -1693,15 +1771,15 @@ section {
     }
 
     .benefits-list {
-        gap: 10px;
+        grid-template-columns: 1fr;
     }
 
     .benefit-item {
-        padding: 12px;
+        padding: 15px;
     }
 
     .benefit-item i {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .benefit-item span {
@@ -1709,12 +1787,11 @@ section {
     }
 
     .contact-cta {
-        padding: 18px;
+        padding: 20px;
     }
 
     .contact-cta h4 {
-        font-size: 1.1rem;
-        margin-bottom: 12px;
+        font-size: 1.2rem;
     }
 
     .contact-cta p {
@@ -1727,21 +1804,56 @@ section {
 
     .contact-method i {
         font-size: 1.3rem;
-        width: 25px;
     }
 
     .contact-label {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .contact-detail {
+        font-size: 0.85rem;
+    }
+
+    .theme-toggle-btn {
+        width: 32px;
+        height: 32px;
         font-size: 0.8rem;
     }
 
-    /* Ajuste adicional para o botão de tema em telas muito pequenas */
-    .theme-toggle-btn {
-        right: 60px; /* Ainda mais à esquerda para telas muito pequenas */
-        padding: 8px; /* Botão um pouco menor */
+    /* Estilos responsivos para visualização simplificada em telas pequenas */
+    .skills-highlights {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .skill-highlight {
+        padding: 20px;
+    }
+
+    .highlight-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .highlight-content h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .highlight-content p {
+        font-size: 0.85rem;
+    }
+
+    .skills-intro {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .skills-toggle {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }
 
@@ -1869,13 +1981,13 @@ body.dark-theme .btn-secondary:hover {
     color: #fff;
 }
 body.dark-theme .skill-item {
-    background: #23232b;
+    background: #1e293b;
 }
 body.dark-theme .skill-description {
-    color: #cbd5e1;
+    color: #94a3b8;
 }
 body.dark-theme .level-badge.primary {
-    background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
 }
 body.dark-theme .level-badge.secondary {
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
@@ -1883,7 +1995,7 @@ body.dark-theme .level-badge.secondary {
 
 body.dark-theme .highlight-item,
 body.dark-theme .stat-card {
-    background: #23232b;
+    background: #1e293b;
     color: #f1f5f9;
     border: 1px solid #333;
 }
@@ -1897,7 +2009,7 @@ body.dark-theme .stat-label {
 }
 
 body.dark-theme .contact-method {
-    background: #23232b;
+    background: #1e293b;
     color: #f1f5f9;
     border: 1px solid #333;
 }
@@ -2119,16 +2231,16 @@ body.dark-theme .value-content h5 {
 }
 
 body.dark-theme .value-content p {
-    color: #9ca3af;
+    color: #94a3b8;
 }
 
 body.dark-theme .value-item i {
-    color: var(--primary-color);
+    color: #6366f1;
 }
 
 body.dark-theme .value-item:hover {
-    background: #2d2d35;
-    border-color: var(--primary-color);
+    border-color: #6366f1;
+    background: #1e293b;
 }
 
 /* Ajuste para evitar sobreposição do badge de destaque com o título */
@@ -2160,4 +2272,38 @@ body.dark-theme .value-item:hover {
     justify-content: center;
     text-align: center;
   }
+}
+
+/* Tema escuro para visualização simplificada */
+body.dark-theme .skill-highlight {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-theme .skill-highlight:hover {
+    border-color: #6366f1;
+    background: #1e293b;
+}
+
+body.dark-theme .highlight-content h4 {
+    color: #e2e8f0;
+}
+
+body.dark-theme .highlight-content p {
+    color: #94a3b8;
+}
+
+body.dark-theme .skills-intro {
+    color: #94a3b8;
+}
+
+body.dark-theme .skills-toggle {
+    background: #1e293b;
+    border-color: #6366f1;
+    color: #6366f1;
+}
+
+body.dark-theme .skills-toggle:hover {
+    background: #6366f1;
+    color: white;
 } 

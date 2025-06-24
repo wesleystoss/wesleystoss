@@ -515,4 +515,47 @@ if (contactFixedBtn) {
     
     // Verificar estado inicial
     toggleContactFixedBtn();
+}
+
+// Função para alternar entre visualização simples e detalhada das habilidades
+function toggleSkills() {
+    const skillsSimple = document.getElementById('skills-simple');
+    const skillsDetailed = document.getElementById('skills-detailed');
+    
+    if (skillsSimple.style.display !== 'none') {
+        // Mostrar visualização detalhada
+        skillsSimple.style.display = 'none';
+        skillsDetailed.style.display = 'block';
+        
+        // Scroll suave para a seção de habilidades
+        const skillsSection = document.getElementById('habilidades');
+        const offsetTop = skillsSection.offsetTop - 70;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+        
+        // Animar os elementos da visualização detalhada
+        setTimeout(() => {
+            const skillItems = document.querySelectorAll('.skill-item');
+            skillItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 50);
+            });
+        }, 300);
+    } else {
+        // Mostrar visualização simples
+        skillsDetailed.style.display = 'none';
+        skillsSimple.style.display = 'block';
+        
+        // Scroll suave para a seção de habilidades
+        const skillsSection = document.getElementById('habilidades');
+        const offsetTop = skillsSection.offsetTop - 70;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
 } 
