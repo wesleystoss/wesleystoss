@@ -42,20 +42,6 @@
                     <h1 class="hero-title">
                         Desenvolvedor <span class="highlight">Full Stack</span> que entrega resultados
                     </h1>
-                    <div class="hero-badges">
-                        <span class="hero-badge">
-                            <i class="fas fa-check-circle"></i>
-                            PHP Especialista
-                        </span>
-                        <span class="hero-badge">
-                            <i class="fas fa-rocket"></i>
-                            Projetos Ágeis
-                        </span>
-                        <span class="hero-badge">
-                            <i class="fas fa-users"></i>
-                            Líder Técnico
-                        </span>
-                    </div>
                 </div>
                 <div class="hero-image">
                     <div class="profile-card">
@@ -79,6 +65,10 @@
                                     <span class="stat-text">Projetos</span>
                                 </div>
                             </div>
+                            <a href="#" class="profile-about-link" onclick="openAboutModal()">
+                                <i class="fas fa-user"></i>
+                                Sobre
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -690,6 +680,37 @@
         </div>
         <div class="toggle-pulse"></div>
     </button>
+
+    <!-- Modal Sobre -->
+    <div id="about-modal" class="about-modal">
+        <div class="about-modal-content">
+            <div class="about-modal-header">
+                <h3>Sobre Wesley Santos</h3>
+                <button class="about-modal-close" onclick="closeAboutModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="about-modal-body">
+                <div class="about-avatar">
+                    <img src="assets/images/profile.jpg" alt="Wesley Santos">
+                </div>
+                <div class="about-bio">
+                    <p>
+                        Desenvolvedor Full Stack apaixonado por criar soluções que fazem a diferença. 
+                        Com mais de 5 anos de experiência, especializei-me em PHP moderno e desenvolvimento web completo.
+                    </p>
+                    <p>
+                        Minha jornada começou com a curiosidade de entender como as coisas funcionam na web. 
+                        Hoje, transformo essa paixão em projetos que resolvem problemas reais para empresas e pessoas.
+                    </p>
+                    <p>
+                        Acredito que código limpo, arquitetura bem pensada e foco no usuário são a base para 
+                        qualquer projeto de sucesso. Sempre em busca de aprender novas tecnologias e melhorar minhas habilidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
