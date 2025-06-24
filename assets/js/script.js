@@ -1,20 +1,20 @@
 // Navegação Mobile
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Fechar menu ao clicar em um link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
+// Removido o código abaixo do topo do arquivo para evitar erro quando o navbar ainda não existe:
+// const hamburger = document.querySelector('.hamburger');
+// const navMenu = document.querySelector('.nav-menu');
+// const navLinks = document.querySelectorAll('.nav-link');
+// 
+// hamburger.addEventListener('click', () => {
+//     hamburger.classList.toggle('active');
+//     navMenu.classList.toggle('active');
+// });
+// 
+// navLinks.forEach(link => {
+//     link.addEventListener('click', () => {
+//         hamburger.classList.remove('active');
+//         navMenu.classList.remove('active');
+//     });
+// });
 
 // Navegação suave
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -691,4 +691,54 @@ window.addEventListener('DOMContentLoaded', () => {
         surpriseInterval = setTimeout(agendarNovaMensagem, proximoTempo);
     }
     setTimeout(agendarNovaMensagem, 10000);
+});
+
+// Função para inicializar eventos da navbar após carregamento dinâmico
+function initNavbarEvents() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+    // Fechar menu ao clicar em um link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (hamburger && navMenu) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+}
+
+// Carregar componentes reutilizáveis (navbar e footer)
+document.addEventListener('DOMContentLoaded', () => {
+    // Só carrega o navbar se não estiver em /lp/
+    const isLP = window.location.pathname.includes('/lp/');
+    const navbarEl = document.getElementById('navbar');
+    if (navbarEl && !isLP) {
+        fetch('assets/components/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                navbarEl.innerHTML = html;
+                initNavbarEvents(); // Inicializa eventos após inserir navbar
+            });
+    }
+    // Footer
+    const footerEl = document.getElementById('footer');
+    if (footerEl) {
+        // Caminho relativo para o footer
+        let footerPath = 'assets/components/footer.html';
+        if (isLP) footerPath = '../assets/components/footer.html';
+        fetch(footerPath)
+            .then(res => res.text())
+            .then(html => {
+                footerEl.innerHTML = html;
+            });
+    }
 }); 

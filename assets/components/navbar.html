@@ -1,0 +1,75 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <span>WS</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="/index.html#inicio" class="nav-link">Início</a></li>
+            <li><a href="/index.html#sobre" class="nav-link">O que ofereço</a></li>
+            <li><a href="/index.html#projetos" class="nav-link">Projetos</a></li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-link">Para empresas <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/lp/salesforce.html" class="nav-link">Salesforce</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="nav-actions">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
+.nav-dropdown {
+    position: relative;
+}
+.nav-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    z-index: 1001;
+    padding: 0.5rem 0;
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+.dropdown-menu li {
+    list-style: none;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 0.7rem 1.2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.18s, color 0.18s;
+    border-radius: 4px;
+}
+.dropdown-menu a:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+@media (max-width: 900px) {
+    .nav-dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: none;
+        min-width: 0;
+        padding: 0;
+    }
+    .dropdown-menu a {
+        padding-left: 2.2rem;
+    }
+}
+</style> 
