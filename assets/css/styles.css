@@ -2559,6 +2559,9 @@ body.dark-theme .contact-option:hover {
     background: #4f46e5;
     color: #fff;
 }
+body.dark-theme .contact-options h5 {
+    color: #fff;
+}
 
 /* --- HERO REORGANIZADO CENTRALIZADO --- */
 .hero-greeting-container {
