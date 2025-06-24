@@ -563,44 +563,9 @@ function toggleSkills() {
 // Função para mostrar/ocultar o balão de contato
 function toggleContactChat() {
     const chat = document.getElementById('contact-chat');
-    const toggle = document.getElementById('contact-toggle');
-    
     if (chat.classList.contains('open')) {
         chat.classList.remove('open');
-        toggle.style.transform = 'scale(1)';
     } else {
         chat.classList.add('open');
-        toggle.style.transform = 'scale(0.9)';
     }
-}
-
-// Funções para a Modal Sobre
-function openAboutModal() {
-    const modal = document.getElementById('about-modal');
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden'; // Previne scroll da página
-}
-
-function closeAboutModal() {
-    const modal = document.getElementById('about-modal');
-    modal.classList.remove('show');
-    document.body.style.overflow = ''; // Restaura scroll da página
-}
-
-// Fechar modal ao clicar fora dela
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('about-modal');
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeAboutModal();
-        }
-    });
-    
-    // Fechar modal com tecla ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('show')) {
-            closeAboutModal();
-        }
-    });
-}); 
+} 
