@@ -517,7 +517,7 @@ if (contactFixedBtn) {
     toggleContactFixedBtn();
 }
 
-// Função para alternar entre visualização simples e detalhada das habilidades
+// Função para alternar entre visualização simples e detalhada das tecnologias
 function toggleSkills() {
     const skillsSimple = document.getElementById('skills-simple');
     const skillsDetailed = document.getElementById('skills-detailed');
@@ -527,8 +527,8 @@ function toggleSkills() {
         skillsSimple.style.display = 'none';
         skillsDetailed.style.display = 'block';
         
-        // Scroll suave para a seção de habilidades
-        const skillsSection = document.getElementById('habilidades');
+        // Scroll suave para a seção de tecnologias
+        const skillsSection = document.getElementById('sobre');
         const offsetTop = skillsSection.offsetTop - 70;
         window.scrollTo({
             top: offsetTop,
@@ -550,8 +550,8 @@ function toggleSkills() {
         skillsDetailed.style.display = 'none';
         skillsSimple.style.display = 'block';
         
-        // Scroll suave para a seção de habilidades
-        const skillsSection = document.getElementById('habilidades');
+        // Scroll suave para a seção de tecnologias
+        const skillsSection = document.getElementById('sobre');
         const offsetTop = skillsSection.offsetTop - 70;
         window.scrollTo({
             top: offsetTop,
