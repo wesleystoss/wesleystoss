@@ -691,4 +691,26 @@ window.addEventListener('DOMContentLoaded', () => {
         surpriseInterval = setTimeout(agendarNovaMensagem, proximoTempo);
     }
     setTimeout(agendarNovaMensagem, 10000);
+});
+
+// Carregar componentes reutilizáveis (navbar e footer)
+document.addEventListener('DOMContentLoaded', () => {
+    // Navbar
+    const navbarEl = document.getElementById('navbar');
+    if (navbarEl) {
+        fetch('/assets/components/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                navbarEl.innerHTML = html;
+            });
+    }
+    // Footer
+    const footerEl = document.getElementById('footer');
+    if (footerEl) {
+        fetch('/assets/components/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                footerEl.innerHTML = html;
+            });
+    }
 }); 
