@@ -18,10 +18,8 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#inicio" class="nav-link">Início</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#sobre" class="nav-link">O que ofereço</a></li>
                 <li><a href="#projetos" class="nav-link">Projetos</a></li>
-                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="theme-toggle" aria-label="Alternar tema" class="theme-toggle-btn">
@@ -105,9 +103,9 @@
                         </div>
                     </div>
                     <div class="hero-buttons">
-                        <a href="#projetos" class="btn btn-primary">
-                            <i class="fas fa-eye"></i>
-                            Ver Projetos
+                        <a href="#sobre" class="btn btn-primary">
+                            <i class="fas fa-code"></i>
+                            O que eu ofereço
                         </a>
                         <a href="#contato" class="btn btn-secondary">
                             <i class="fas fa-comments"></i>
@@ -122,72 +120,316 @@
         </div>
     </section>
 
-    <!-- Seção Sobre -->
+    <!-- Seção O que eu ofereço -->
     <section id="sobre" class="about">
         <div class="container">
-            <h2 class="section-title">Por que me escolher?</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="about-intro">
-                        <h3>Desenvolvedor Full Stack com foco em resultados</h3>
-                        <p>
-                            Especializado em PHP moderno com Clean Architecture, SOLID e Design Patterns. 
-                            Experiência em liderança de projetos ágeis e integração com Salesforce, Zendesk e HubSpot.
-                        </p>
+            <h2 class="section-title">O que eu ofereço</h2>
+            
+            <!-- Visualização Simplificada -->
+            <div class="skills-simple" id="skills-simple">
+                <div class="skills-overview">
+                    <p class="skills-intro">
+                        Especializado em desenvolvimento web completo, desde a criação de sites até sistemas complexos. 
+                        Foco em soluções que geram resultados reais para o seu negócio.
+                    </p>
+                    
+                    <div class="skills-highlights">
+                        <div class="skill-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Desenvolvimento Web</h4>
+                                <p>Sites, sistemas e aplicações web completas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>E-commerce</h4>
+                                <p>Lojas virtuais completas e sistemas de vendas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Integrações</h4>
+                                <p>Conexão com sistemas empresariais e APIs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Ferramentas Modernas</h4>
+                                <p>Uso das melhores tecnologias do mercado</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="about-value">
-                        <h4>O que você ganha</h4>
-                        <div class="value-propositions">
-                            <div class="value-item">
-                                <i class="fas fa-rocket"></i>
-                                <div class="value-content">
-                                    <h5>Entregas Rápidas</h5>
-                                    <p>Projetos no prazo sem comprometer qualidade</p>
+                    <button class="btn btn-secondary skills-toggle" onclick="toggleSkills()">
+                        <i class="fas fa-code"></i>
+                        Ver Tecnologias com que Trabalho
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Visualização Completa (inicialmente oculta) -->
+            <div class="skills-detailed" id="skills-detailed" style="display: none;">
+                <div class="skills-content">
+                    <div class="skills-category">
+                        <h3>Ferramentas de Negócio</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Salesforce</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge primary">Foco Principal</span>
+                                        <p class="skill-description">Plataforma para gerenciar relacionamentos com clientes (CRM)</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="value-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <div class="value-content">
-                                    <h5>Código Seguro</h5>
-                                    <p>Melhores práticas de segurança aplicadas</p>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Zendesk</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Sistema para atendimento ao cliente e suporte técnico</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="value-item">
-                                <i class="fas fa-chart-line"></i>
-                                <div class="value-content">
-                                    <h5>ROI Garantido</h5>
-                                    <p>Soluções que otimizam processos</p>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>HubSpot</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Plataforma para marketing, vendas e automação de processos</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="value-item">
-                                <i class="fas fa-headset"></i>
-                                <div class="value-content">
-                                    <h5>Suporte Contínuo</h5>
-                                    <p>Disponível para manutenção e melhorias</p>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Blip</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Plataforma para criar e gerenciar chatbots e atendimento automatizado</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Ferramentas & DevOps</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Docker</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge primary">Foco Principal</span>
+                                        <p class="skill-description">Empacotamento de aplicações para funcionar em qualquer ambiente</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-git-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Git</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge primary">Foco Principal</span>
+                                        <p class="skill-description">Controle de versões e trabalho em equipe no código</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Composer</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Gerenciador de bibliotecas e ferramentas para PHP</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-vial"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>PHPUnit</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Testes automatizados para garantir qualidade do código</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Clean Architecture</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Organização do código para facilitar manutenção e crescimento</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Design Patterns</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Soluções testadas e reutilizáveis para problemas comuns</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Backend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>PHP</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge primary">Foco Principal</span>
+                                        <p class="skill-description">Linguagem principal para criar sites e aplicações web dinâmicas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>MySQL</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge primary">Foco Principal</span>
+                                        <p class="skill-description">Sistema para armazenar e organizar dados de forma eficiente</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-plug"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>PDO</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Interface orientada a objetos para acesso seguro e consistente a bancos de dados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Node.js</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Plataforma para criar aplicações web rápidas e escaláveis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>APEX</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Linguagem de programação proprietária da Salesforce para desenvolvimento na plataforma</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Frontend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>HTML5</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge secondary">Especialização</span>
+                                        <p class="skill-description">Estrutura básica e organização do conteúdo dos sites</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>CSS3</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge primary">Foco Principal</span>
+                                        <p class="skill-description">Design visual, cores, layout e responsividade dos sites</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>JavaScript</h4>
+                                    <div class="skill-level">
+                                        <span class="level-badge primary">Foco Principal</span>
+                                        <p class="skill-description">Funcionalidades interativas e dinâmicas nos sites</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Projetos no Prazo</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">0</div>
-                        <div class="stat-label">Bugs Críticos</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">24h</div>
-                        <div class="stat-label">Resposta</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5★</div>
-                        <div class="stat-label">Satisfação</div>
-                    </div>
-                </div>
+                
+                <button class="btn btn-secondary skills-toggle" onclick="toggleSkills()">
+                    <i class="fas fa-eye-slash"></i>
+                    Ocultar Tecnologias
+                </button>
             </div>
         </div>
     </section>
@@ -335,311 +577,8 @@
         </div>
     </section>
 
-    <!-- Seção Habilidades -->
-    <section id="habilidades" class="skills">
-        <div class="container">
-            <h2 class="section-title">Minhas Habilidades</h2>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>Backend</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-php"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>PHP</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge primary">Foco Principal</span>
-                                    <p class="skill-description">Linguagem principal para criar sites e aplicações web dinâmicas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>MySQL</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge primary">Foco Principal</span>
-                                    <p class="skill-description">Sistema para armazenar e organizar dados de forma eficiente</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-plug"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>PDO</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Interface orientada a objetos para acesso seguro e consistente a bancos de dados</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-node-js"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Node.js</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Plataforma para criar aplicações web rápidas e escaláveis</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>APEX</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Linguagem de programação proprietária da Salesforce para desenvolvimento na plataforma</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Frontend</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>HTML5</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Estrutura básica e organização do conteúdo dos sites</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>CSS3</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge primary">Foco Principal</span>
-                                    <p class="skill-description">Design visual, cores, layout e responsividade dos sites</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-js-square"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>JavaScript</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge primary">Foco Principal</span>
-                                    <p class="skill-description">Funcionalidades interativas e dinâmicas nos sites</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Ferramentas & DevOps</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-docker"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Docker</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge primary">Foco Principal</span>
-                                    <p class="skill-description">Empacotamento de aplicações para funcionar em qualquer ambiente</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-git-alt"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Git</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge primary">Foco Principal</span>
-                                    <p class="skill-description">Controle de versões e trabalho em equipe no código</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-box"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Composer</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Gerenciador de bibliotecas e ferramentas para PHP</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-vial"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>PHPUnit</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Testes automatizados para garantir qualidade do código</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Clean Architecture</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Organização do código para facilitar manutenção e crescimento</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Design Patterns</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Soluções testadas e reutilizáveis para problemas comuns</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Ferramentas de Negócio</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Salesforce</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge primary">Foco Principal</span>
-                                    <p class="skill-description">Plataforma para gerenciar relacionamentos com clientes (CRM)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Zendesk</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Sistema para atendimento ao cliente e suporte técnico</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>HubSpot</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Plataforma para marketing, vendas e automação de processos</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Blip</h4>
-                                <div class="skill-level">
-                                    <span class="level-badge secondary">Especialização</span>
-                                    <p class="skill-description">Plataforma para criar e gerenciar chatbots e atendimento automatizado</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Seção Contato -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2 class="section-title">Vamos Conversar?</h2>
-            <p class="section-subtitle">Pronto para transformar seu projeto em realidade</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-intro">
-                        <h3>Disponível para novos projetos</h3>
-                        <p>
-                            Especializado em e-commerce, sistemas de gestão e integrações empresariais. 
-                            Resposta em até 2 horas via WhatsApp.
-                        </p>
-                    </div>
-
-                    <div class="contact-cta">
-                        <h4>Vamos começar hoje?</h4>
-                        <p>
-                            Me envie uma mensagem e vamos discutir como posso ajudar seu projeto!
-                        </p>
-                    </div>
-
-                    <div class="contact-methods">
-                        <a href="https://wa.me/556199241137" target="_blank" class="contact-method primary-contact">
-                            <i class="fab fa-whatsapp"></i>
-                            <div class="contact-method-info">
-                                <span class="contact-label">WhatsApp (Principal)</span>
-                                <span class="contact-detail">Resposta em 2h</span>
-                            </div>
-                        </a>
-                        <a href="https://linkedin.com/in/wesley-santos-8b08721a3/" target="_blank" class="contact-method">
-                            <i class="fab fa-linkedin"></i>
-                            <div class="contact-method-info">
-                                <span class="contact-label">LinkedIn</span>
-                                <span class="contact-detail">Perfil profissional</span>
-                            </div>
-                        </a>
-                        <a href="mailto:wesleyrogerio77@gmail.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div class="contact-method-info">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-detail">wesleyrogerio77@gmail.com</span>
-                            </div>
-                        </a>
-                        <a href="https://github.com/wesleysSantos" target="_blank" class="contact-method">
-                            <i class="fab fa-github"></i>
-                            <div class="contact-method-info">
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-detail">Portfólio de código</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- (Removida para usar apenas o balão flutuante) -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -664,10 +603,96 @@
         </div>
     </footer>
 
-    <!-- Botão Fixo de Contato (Mobile) -->
-    <button id="contact-fixed-btn" class="contact-fixed-btn" aria-label="Ir para contato">
-        <i class="fas fa-comments"></i>
-        <span>Contato</span>
+    <!-- Balão de Contato Flutuante -->
+    <div id="contact-chat" class="contact-chat">
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <img src="assets/images/profile.jpg" alt="Wesley Santos" class="chat-avatar-img">
+                <div class="chat-status">
+                    <span class="status-dot"></span>
+                </div>
+            </div>
+            <div class="chat-info">
+                <h4>Wesley Santos</h4>
+                <p>Disponível para novos projetos</p>
+            </div>
+            <button class="chat-close" onclick="toggleContactChat()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chat-content">
+            <div class="chat-message">
+                <div class="message-bubble">
+                    <p>Olá! 👋 Como posso ajudar seu projeto hoje?</p>
+                    <span class="message-time">Agora</span>
+                </div>
+            </div>
+            
+            <div class="contact-options">
+                <h5>Escolha como prefere conversar:</h5>
+                
+                <a href="https://wa.me/556199241137" target="_blank" class="contact-option primary">
+                    <div class="option-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="option-content">
+                        <h6>WhatsApp (Principal)</h6>
+                        <p>Resposta em até 2 horas</p>
+                    </div>
+                    <div class="option-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://linkedin.com/in/wesley-santos-8b08721a3/" target="_blank" class="contact-option">
+                    <div class="option-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="option-content">
+                        <h6>LinkedIn</h6>
+                        <p>Perfil profissional</p>
+                    </div>
+                    <div class="option-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="mailto:wesleyrogerio77@gmail.com" class="contact-option">
+                    <div class="option-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="option-content">
+                        <h6>Email</h6>
+                        <p>wesleyrogerio77@gmail.com</p>
+                    </div>
+                    <div class="option-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/wesleysSantos" target="_blank" class="contact-option">
+                    <div class="option-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="option-content">
+                        <h6>GitHub</h6>
+                        <p>Portfólio de código</p>
+                    </div>
+                    <div class="option-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão de Contato Flutuante -->
+    <button id="contact-toggle" class="contact-toggle" onclick="toggleContactChat()" aria-label="Abrir chat de contato">
+        <div class="toggle-icon">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="toggle-pulse"></div>
     </button>
 
     <script src="assets/js/script.js"></script>
