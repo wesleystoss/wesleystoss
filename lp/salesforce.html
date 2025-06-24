@@ -208,5 +208,18 @@
         }
     }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const footerEl = document.getElementById('footer');
+            if (footerEl) {
+                fetch('../assets/components/footer.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        footerEl.innerHTML = html;
+                        if (typeof updateFooterYear === 'function') updateFooterYear();
+                    });
+            }
+        });
+    </script>
 </body>
 </html> 
