@@ -138,9 +138,20 @@
                     </button>
                 </div>
             </div>
-            
-            <!-- Visualização Completa (inicialmente oculta) -->
-            <div class="skills-detailed" id="skills-detailed" style="display: none;">
+        </div>
+    </section>
+
+    <!-- Modal de Tecnologias -->
+    <div id="technologies-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Tecnologias com que Trabalho</h3>
+                <button class="modal-close" onclick="closeTechnologiesModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
                 <div class="skills-content">
                     <div class="skills-category">
                         <h3>Ferramentas de Negócio</h3>
@@ -382,14 +393,9 @@
                         </div>
                     </div>
                 </div>
-                
-                <button class="btn btn-secondary skills-toggle" onclick="toggleSkills()">
-                    <i class="fas fa-eye-slash"></i>
-                    Ocultar Tecnologias
-                </button>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Seção Experiências -->
     <section id="experiencias" class="experience">
@@ -589,7 +595,7 @@
                             <span class="tech-tag">SOQL</span>
                         </div>
                         <div class="experience-links">
-                            <a href="lp/salesforce.html" target="_blank" class="btn btn-small">
+                            <a href="lp/salesforce" target="_blank" class="btn btn-small">
                                 <i class="fas fa-info-circle"></i> Saiba Mais
                             </a>
                             <a href="https://trailhead.salesforce.com/pt-BR" target="_blank" rel="noopener" class="btn btn-small btn-live">
@@ -636,7 +642,7 @@
                             <span class="tech-tag">Apps Framework</span>
                         </div>
                         <div class="experience-links">
-                            <a href="lp/zendesk.html" target="_blank" class="btn btn-small">
+                            <a href="lp/zendesk" target="_blank" class="btn btn-small">
                                 <i class="fas fa-info-circle"></i> Saiba Mais
                             </a>
                             <a href="https://developer.zendesk.com/" target="_blank" rel="noopener" class="btn btn-small btn-live">
@@ -682,7 +688,7 @@
                             <span class="tech-tag">Webhooks</span>
                         </div>
                         <div class="experience-links">
-                            <a href="lp/blip.html" target="_blank" class="btn btn-small">
+                            <a href="lp/blip" target="_blank" class="btn btn-small">
                                 <i class="fas fa-info-circle"></i> Saiba Mais
                             </a>
                             <a href="https://developers.blip.ai/" target="_blank" rel="noopener" class="btn btn-small btn-live">

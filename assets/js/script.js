@@ -516,27 +516,16 @@ if (contactFixedBtn) {
     toggleContactFixedBtn();
 }
 
-// Função para alternar entre visualização simples e detalhada das tecnologias
+// Função para abrir a modal de tecnologias
 function toggleSkills() {
-    const skillsSimple = document.getElementById('skills-simple');
-    const skillsDetailed = document.getElementById('skills-detailed');
-    
-    if (skillsSimple.style.display !== 'none') {
-        // Mostrar visualização detalhada
-        skillsSimple.style.display = 'none';
-        skillsDetailed.style.display = 'block';
+    const modal = document.getElementById('technologies-modal');
+    if (modal) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Previne scroll do body
         
-        // Scroll suave para a seção de tecnologias
-        const skillsSection = document.getElementById('sobre');
-        const offsetTop = skillsSection.offsetTop - 70;
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
-        
-        // Animar os elementos da visualização detalhada
+        // Animar os elementos da modal
         setTimeout(() => {
-            const skillItems = document.querySelectorAll('.skill-item');
+            const skillItems = modal.querySelectorAll('.skill-item');
             skillItems.forEach((item, index) => {
                 setTimeout(() => {
                     item.style.opacity = '1';
@@ -544,20 +533,33 @@ function toggleSkills() {
                 }, index * 50);
             });
         }, 300);
-    } else {
-        // Mostrar visualização simples
-        skillsDetailed.style.display = 'none';
-        skillsSimple.style.display = 'block';
-        
-        // Scroll suave para a seção de tecnologias
-        const skillsSection = document.getElementById('sobre');
-        const offsetTop = skillsSection.offsetTop - 70;
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
     }
 }
+
+// Função para fechar a modal de tecnologias
+function closeTechnologiesModal() {
+    const modal = document.getElementById('technologies-modal');
+    if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = ''; // Restaura scroll do body
+    }
+}
+
+// Fechar modal ao clicar no backdrop
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('technologies-modal');
+    if (modal) {
+        const backdrop = modal.querySelector('.modal-backdrop');
+        backdrop.addEventListener('click', closeTechnologiesModal);
+        
+        // Fechar modal com tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeTechnologiesModal();
+            }
+        });
+    }
+});
 
 // Função para mostrar/ocultar o balão de contato
 function toggleContactChat() {
