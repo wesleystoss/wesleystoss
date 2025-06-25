@@ -59,7 +59,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observar elementos para animação
 document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.about-content, .project-card, .skill-item, .highlight-item, .stat-card');
+    const revealElements = document.querySelectorAll('.about-content, .experience-card, .skill-item, .highlight-item, .stat-card');
     revealElements.forEach(el => {
         observer.observe(el);
     });
@@ -291,7 +291,7 @@ if (aboutSection) {
 }
 
 // Efeito hover nos cards de projeto
-document.querySelectorAll('.project-card').forEach(card => {
+document.querySelectorAll('.experience-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-10px) scale(1.02)';
     });
