@@ -803,8 +803,8 @@ section {
 }
 
 .experience-badge.admin {
-    background: #2563eb;
-    color: #fff;
+    background: #d6e3ff;
+    color: #2563eb;
     /* border: 1px solid #1e40af; */
     border-radius: 16px;
     font-weight: 600;
@@ -816,8 +816,8 @@ section {
 }
 
 .experience-badge.dev {
-    background: #f59e42;
-    color: #fff;
+    background: #ffe9d2;
+    color: #f59e42;
     border-radius: 16px;
     font-weight: 600;
     display: inline-block;
@@ -2808,18 +2808,13 @@ body.dark-theme .toggle-btn.active {
 
 /* Estilos para badges admin e dev no tema dark */
 body.dark-theme .experience-badge.admin {
-    background: #1e40af;
+    background: #2563eb;
     color: #fff;
     box-shadow: 0 2px 8px 0 rgba(30,64,175,0.25);
 }
 
 body.dark-theme .experience-badge.dev {
-    background: #ea580c;
-    color: #fff;
-}
-
-body.dark-theme .experience-badge.dev {
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    background: #f59e42;
     color: white;
 }
 
