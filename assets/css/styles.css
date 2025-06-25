@@ -2784,11 +2784,11 @@ body.dark-theme .dropdown-menu a:hover {
 
 /* Dark theme para toggle */
 body.dark-theme .toggle-container {
-    background: var(--text-primary);
+    background: #1e293b;
 }
 
 body.dark-theme .toggle-btn {
-    color: var(--text-light);
+    color: #94a3b8;
 }
 
 body.dark-theme .toggle-btn:hover {
