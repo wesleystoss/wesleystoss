@@ -2017,7 +2017,9 @@ body.dark-theme .level-badge.primary {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
 }
 body.dark-theme .level-badge.secondary {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
 }
 
 body.dark-theme .highlight-item,
@@ -2719,18 +2721,6 @@ body.dark-theme .contact-options h5 {
     border-color: #4f46e5;
 }
 
-body.dark-theme .nav-dropdown .dropdown-menu {
-    background: var(--background-alt);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.45);
-}
-body.dark-theme .dropdown-menu a {
-    color: var(--text-primary);
-}
-body.dark-theme .dropdown-menu a:hover {
-    background: var(--primary-color);
-    color: #fff;
-}
-
 /* Seção Header com Toggle */
 .section-header {
     text-align: center;
@@ -2826,4 +2816,329 @@ body.dark-theme .experience-badge.admin {
 body.dark-theme .experience-badge.dev {
     background: #ea580c;
     color: #fff;
+}
+
+body.dark-theme .experience-badge.dev {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+}
+
+/* Modal de Tecnologias */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-container {
+    position: relative;
+    background: var(--background);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+}
+
+.modal-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.modal-close:hover {
+    background: var(--background-alt);
+    color: var(--text-primary);
+}
+
+.modal-content {
+    max-height: calc(90vh - 100px);
+    overflow-y: auto;
+    padding: 32px;
+}
+
+.modal-content .skills-content {
+    margin: 0;
+}
+
+.modal-content .skills-category {
+    margin-bottom: 40px;
+}
+
+.modal-content .skills-category:last-child {
+    margin-bottom: 0;
+}
+
+.modal-content .skills-category h3 {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+}
+
+.modal-content .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.modal-content .skill-item {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: var(--transition);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.modal-content .skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.modal-content .skill-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.modal-content .skill-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+}
+
+.modal-content .skill-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 8px 0 0 0;
+}
+
+.modal-content .skill-level {
+    margin-top: 8px;
+}
+
+.modal-content .level-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-content .level-badge.primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+}
+
+.modal-content .level-badge.secondary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Animações da Modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Dark Theme para Modal */
+body.dark-theme .modal-container {
+    background: var(--background);
+    border: 1px solid var(--border);
+}
+
+body.dark-theme .modal-header {
+    background: var(--background);
+    border-bottom-color: var(--border);
+}
+
+body.dark-theme .modal-header h3 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .modal-close {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .modal-close:hover {
+    background: var(--background-alt);
+    color: var(--text-primary);
+}
+
+body.dark-theme .modal-content .skill-item {
+    background: var(--background);
+    border-color: var(--border);
+}
+
+body.dark-theme .modal-content .skill-item:hover {
+    border-color: var(--primary-color);
+}
+
+body.dark-theme .modal-content .skill-info h4 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .modal-content .skill-description {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .modal-content .level-badge.secondary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Responsividade da Modal */
+@media (max-width: 768px) {
+    .modal {
+        padding: 10px;
+    }
+    
+    .modal-container {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+    
+    .modal-header {
+        padding: 20px 24px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.25rem;
+    }
+    
+    .modal-content {
+        padding: 24px;
+        max-height: calc(95vh - 80px);
+    }
+    
+    .modal-content .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .modal-content .skill-item {
+        padding: 16px;
+    }
+    
+    .modal-content .skill-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-header {
+        padding: 16px 20px;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+    
+    .modal-content .skill-item {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .modal-content .skill-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .modal-content .skill-info h4 {
+        font-size: 1rem;
+    }
+    
+    .modal-content .skill-description {
+        font-size: 0.85rem;
+    }
 }
