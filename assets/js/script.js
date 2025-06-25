@@ -795,4 +795,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 footerEl.innerHTML = html;
             });
     }
+});
+
+// Função para alternar entre Projetos e Experiências
+function toggleView(view) {
+    const projectsContainer = document.getElementById('projects-container');
+    const experiencesContainer = document.getElementById('experiences-container');
+    const toggleProjects = document.getElementById('toggle-projects');
+    const toggleExperiences = document.getElementById('toggle-experiences');
+    const sectionSubtitle = document.getElementById('section-subtitle');
+
+    if (view === 'projects') {
+        projectsContainer.style.display = 'grid';
+        experiencesContainer.style.display = 'none';
+        toggleProjects.classList.add('active');
+        toggleExperiences.classList.remove('active');
+        sectionSubtitle.textContent = 'Soluções que geraram resultados reais';
+    } else if (view === 'experiences') {
+        projectsContainer.style.display = 'none';
+        experiencesContainer.style.display = 'grid';
+        toggleProjects.classList.remove('active');
+        toggleExperiences.classList.add('active');
+        sectionSubtitle.textContent = 'Plataformas e tecnologias com que trabalho';
+    }
+}
+
+// Inicializar com projetos por padrão
+document.addEventListener('DOMContentLoaded', () => {
+    const projectsSection = document.getElementById('projetos');
+    if (projectsSection) {
+        toggleView('projects');
+    }
 }); 

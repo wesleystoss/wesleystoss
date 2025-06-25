@@ -801,6 +801,38 @@ section {
     color: var(--primary-color);
 }
 
+.project-badge.admin {
+    background: #2563eb;
+    color: #fff;
+    border: 1px solid #1e40af;
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-right: 6px;
+    box-shadow: 0 2px 8px 0 rgba(37,99,235,0.10);
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, color 0.2s;
+}
+
+.project-badge.dev {
+    background: #f59e42;
+    color: #fff;
+    border: 1px solid #b45309;
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-right: 6px;
+    box-shadow: 0 2px 8px 0 rgba(245,158,66,0.10);
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, color 0.2s;
+}
+
 .project-content {
     margin-bottom: 25px;
 }
@@ -2704,4 +2736,89 @@ body.dark-theme .dropdown-menu a {
 body.dark-theme .dropdown-menu a:hover {
     background: var(--primary-color);
     color: #fff;
+}
+
+/* Seção Header com Toggle */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    background: var(--background-alt);
+    padding: 8px;
+    border-radius: 50px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: var(--shadow);
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.toggle-btn:hover {
+    color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.toggle-btn.active {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.toggle-btn i {
+    font-size: 1rem;
+}
+
+/* Dark theme para toggle */
+body.dark-theme .toggle-container {
+    background: var(--text-primary);
+}
+
+body.dark-theme .toggle-btn {
+    color: var(--text-light);
+}
+
+body.dark-theme .toggle-btn:hover {
+    color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.2);
+}
+
+body.dark-theme .toggle-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsividade para toggle */
+@media (max-width: 768px) {
+    .toggle-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        border-radius: 15px;
+    }
+    
+    .toggle-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 20px;
+    }
 } 
