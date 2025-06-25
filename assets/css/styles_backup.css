@@ -426,7 +426,7 @@ section {
 }
 
 /* Projetos Section */
-.projects-grid {
+.experience-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
@@ -434,7 +434,7 @@ section {
     margin: 0 auto;
 }
 
-.project-card {
+.experience-card {
     background: white;
     border-radius: 12px;
     overflow: hidden;
@@ -444,12 +444,12 @@ section {
     height: fit-content;
 }
 
-.project-card:hover {
+.experience-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
 
-.project-header {
+.experience-header {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -457,7 +457,7 @@ section {
     border-bottom: 1px solid var(--border);
 }
 
-.project-icon {
+.experience-icon {
     width: 40px;
     height: 40px;
     background: var(--gradient);
@@ -470,14 +470,14 @@ section {
     flex-shrink: 0;
 }
 
-.project-title h3 {
+.experience-title h3 {
     font-size: 1rem;
     margin-bottom: 3px;
     color: var(--text-primary);
     line-height: 1.3;
 }
 
-.project-category {
+.experience-category {
     font-size: 0.7rem;
     color: var(--text-secondary);
     font-weight: 500;
@@ -485,18 +485,18 @@ section {
     letter-spacing: 0.5px;
 }
 
-.project-content {
+.experience-content {
     padding: 15px 18px 18px;
 }
 
-.project-content p {
+.experience-content p {
     color: var(--text-secondary);
     line-height: 1.4;
     margin-bottom: 15px;
     font-size: 0.85rem;
 }
 
-.project-tech {
+.experience-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
@@ -513,12 +513,12 @@ section {
     border: 1px solid var(--border);
 }
 
-.project-links {
+.experience-links {
     display: flex;
     gap: 8px;
 }
 
-.project-links .btn-small {
+.experience-links .btn-small {
     padding: 6px 12px;
     font-size: 0.75rem;
     flex: 1;
@@ -875,7 +875,7 @@ section {
         gap: 40px;
     }
 
-    .projects-grid {
+    .experience-grid {
         grid-template-columns: 1fr;
         gap: 20px;
         max-width: 100%;
@@ -924,30 +924,30 @@ section {
         position: relative;
     }
 
-    .project-header {
+    .experience-header {
         padding: 12px 15px 10px;
     }
 
-    .project-icon {
+    .experience-icon {
         width: 35px;
         height: 35px;
         font-size: 1rem;
     }
 
-    .project-title h3 {
+    .experience-title h3 {
         font-size: 0.95rem;
     }
 
-    .project-content {
+    .experience-content {
         padding: 12px 15px 15px;
     }
 
-    .project-links {
+    .experience-links {
         flex-direction: column;
         gap: 6px;
     }
 
-    .project-links .btn-small {
+    .experience-links .btn-small {
         width: 100%;
         padding: 8px 12px;
     }
@@ -1100,7 +1100,7 @@ body.dark-theme .hero {
     background: var(--gradient);
 }
 
-body.dark-theme .project-card,
+body.dark-theme .experience-card,
 body.dark-theme .about,
 body.dark-theme .skills,
 body.dark-theme .footer {
@@ -1206,54 +1206,54 @@ body.dark-theme .contact-method.primary-contact i {
 }
 
 /* Estilos para botões dos projetos no tema dark */
-body.dark-theme .project-links .btn-small {
+body.dark-theme .experience-links .btn-small {
     background: var(--background-alt);
     color: var(--text-primary);
     border: 1px solid var(--border);
 }
 
-body.dark-theme .project-links .btn-small:hover {
+body.dark-theme .experience-links .btn-small:hover {
     background: var(--primary-color);
     color: #fff;
     border-color: var(--primary-color);
 }
 
-body.dark-theme .project-links .btn-small i {
+body.dark-theme .experience-links .btn-small i {
     color: #fbbf24;
 }
 
-body.dark-theme .project-links .btn-small:hover i {
+body.dark-theme .experience-links .btn-small:hover i {
     color: #fff;
 }
 
-body.dark-theme .project-links .btn-live {
+body.dark-theme .experience-links .btn-live {
     background: var(--background-alt);
     color: var(--text-primary);
     border: 1px solid var(--border);
 }
 
-body.dark-theme .project-links .btn-live:hover {
+body.dark-theme .experience-links .btn-live:hover {
     background: var(--primary-color);
     color: #fff;
     border-color: var(--primary-color);
 }
 
-body.dark-theme .project-links .btn-live i {
+body.dark-theme .experience-links .btn-live i {
     color: #fbbf24;
 }
 
-body.dark-theme .project-links .btn-live:hover i {
+body.dark-theme .experience-links .btn-live:hover i {
     color: #fff;
 }
 
 /* Estilos para ícones dos botões dos projetos */
-.project-links .btn-small i,
-.project-links .btn-live i {
+.experience-links .btn-small i,
+.experience-links .btn-live i {
     color: #fbbf24;
 }
 
-.project-links .btn-small:hover i,
-.project-links .btn-live:hover i {
+.experience-links .btn-small:hover i,
+.experience-links .btn-live:hover i {
     color: #fff;
 }
 
@@ -1323,30 +1323,30 @@ body.dark-theme .contact-fixed-btn:hover {
 
 /* Estilos responsivos para projetos */
 @media (max-width: 768px) {
-    .project-header {
+    .experience-header {
         padding: 12px 15px 10px;
     }
 
-    .project-icon {
+    .experience-icon {
         width: 35px;
         height: 35px;
         font-size: 1rem;
     }
 
-    .project-title h3 {
+    .experience-title h3 {
         font-size: 0.95rem;
     }
 
-    .project-content {
+    .experience-content {
         padding: 12px 15px 15px;
     }
 
-    .project-links {
+    .experience-links {
         flex-direction: column;
         gap: 6px;
     }
 
-    .project-links .btn-small {
+    .experience-links .btn-small {
         width: 100%;
         padding: 8px 12px;
     }

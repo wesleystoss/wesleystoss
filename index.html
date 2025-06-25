@@ -70,13 +70,15 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+            <a href="#o-que-ofereco" class="scroll-link">
+                <div class="scroll-arrow"></div>
+            </a>
         </div>
     </section>
     <!-- Fim do novo Hero -->
 
     <!-- Seção O que eu ofereço -->
-    <section id="sobre" class="about">
+    <section id="o-que-ofereco" class="about">
         <div class="container">
             <h2 class="section-title">O que eu ofereço</h2>
             
@@ -389,33 +391,48 @@
         </div>
     </section>
 
-    <!-- Seção Projetos -->
-    <section id="projetos" class="projects">
+    <!-- Seção Experiências -->
+    <section id="experiencias" class="experience">
         <div class="container">
-            <h2 class="section-title">Projetos em Destaque</h2>
-            <p class="section-subtitle">Soluções que geraram resultados reais</p>
+            <div class="section-header">
+                <h2 class="section-title" id="section-title">Experiências</h2>
+                <p class="section-subtitle" id="section-subtitle">Soluções que geraram resultados reais</p>
+                
+                <!-- Botão Toggle -->
+                <div class="toggle-container">
+                    <button class="toggle-btn active" id="toggle-experience" onclick="toggleView('experience')">
+                        <i class="fas fa-code"></i>
+                        Projetos
+                    </button>
+                    <button class="toggle-btn" id="toggle-experiences" onclick="toggleView('experiences')">
+                        <i class="fas fa-briefcase"></i>
+                        Plataformas
+                    </button>
+                </div>
+            </div>
             
-            <div class="projects-grid">
-                <div class="project-card featured">
-                    <div class="project-header">
-                        <div class="project-icon">
+            <!-- Container das Experiências -->
+            <div class="experience-grid" id="experience-container">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
                             <i class="fas fa-shopping-cart"></i>
                         </div>
-                        <div class="project-title">
+                        <div class="experience-title">
                             <h3>E-commerce PHP</h3>
-                            <span class="project-category">Sistema Completo</span>
-                            <div class="project-badges">
-                                <span class="project-badge success">Em Produção</span>
+                            <span class="experience-category">Sistema Completo</span>
+                            <div class="experience-badges">
+                                <span class="experience-badge success">Em Produção</span>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="experience-content">
                         <p>
                             Loja virtual completa para vender produtos online. Inclui sistema de cadastro de clientes, 
                             carrinho de compras, diferentes formas de pagamento e painel para gerenciar produtos, 
                             vendas e clientes. Ideal para empresas que querem começar a vender pela internet.
                         </p>
-                        <div class="project-results">
+                        <div class="experience-results">
                             <h4>O que este projeto resolve:</h4>
                             <ul class="results-list">
                                 <li><i class="fas fa-check"></i> Permite vender produtos 24 horas por dia</li>
@@ -424,13 +441,13 @@
                                 <li><i class="fas fa-check"></i> Cadastro e login de clientes</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
+                        <div class="experience-tech">
                             <span class="tech-tag">PHP 8.2</span>
                             <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">Docker</span>
                         </div>
-                        <div class="project-links">
+                        <div class="experience-links">
                             <a href="https://github.com/wesleystoss/e-commerce-php-completo" target="_blank" class="btn btn-small">
                                 <i class="fab fa-github"></i> Código
                             </a>
@@ -441,26 +458,26 @@
                     </div>
                 </div>
                 
-                <div class="project-card featured">
-                    <div class="project-header">
-                        <div class="project-icon">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="project-title">
+                        <div class="experience-title">
                             <h3>Sistema Educacional</h3>
-                            <span class="project-category">Gestão de Alunos</span>
-                            <div class="project-badges">
-                                <span class="project-badge success">Testado</span>
+                            <span class="experience-category">Gestão de Alunos</span>
+                            <div class="experience-badges">
+                                <span class="experience-badge success">Testado</span>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="experience-content">
                         <p>
                             Sistema completo para escolas e cursos gerenciarem seus alunos, turmas e notas. 
                             Permite cadastrar estudantes, criar turmas, lançar notas, gerar relatórios de 
                             desempenho e acompanhar o progresso de cada aluno. Ideal para instituições de ensino.
                         </p>
-                        <div class="project-results">
+                        <div class="experience-results">
                             <h4>O que este projeto resolve:</h4>
                             <ul class="results-list">
                                 <li><i class="fas fa-check"></i> Organiza informações de alunos e turmas</li>
@@ -469,13 +486,13 @@
                                 <li><i class="fas fa-check"></i> Interface fácil de usar para professores</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
+                        <div class="experience-tech">
                             <span class="tech-tag">PHP 8.1+</span>
                             <span class="tech-tag">PDO</span>
                             <span class="tech-tag">Clean Architecture</span>
                             <span class="tech-tag">PHPUnit</span>
                         </div>
-                        <div class="project-links">
+                        <div class="experience-links">
                             <a href="https://github.com/wesleystoss/curso-pdo" target="_blank" class="btn btn-small">
                                 <i class="fab fa-github"></i> Código
                             </a>
@@ -486,26 +503,26 @@
                     </div>
                 </div>
 
-                <div class="project-card featured">
-                    <div class="project-header">
-                        <div class="project-icon">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
                             <i class="fas fa-cut"></i>
                         </div>
-                        <div class="project-title">
+                        <div class="experience-title">
                             <h3>Elegance - Salão de Beleza</h3>
-                            <span class="project-category">Site Institucional</span>
-                            <div class="project-badges">
-                                <span class="project-badge success">Em Produção</span>
+                            <span class="experience-category">Site Institucional</span>
+                            <div class="experience-badges">
+                                <span class="experience-badge success">Em Produção</span>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="experience-content">
                         <p>
                             Site profissional para salão de beleza mostrar seus serviços, preços e trabalhos realizados. 
                             Inclui galeria de fotos dos trabalhos, informações sobre serviços oferecidos, 
                             formulário para agendamento e integração direta com WhatsApp para contato rápido.
                         </p>
-                        <div class="project-results">
+                        <div class="experience-results">
                             <h4>O que este projeto resolve:</h4>
                             <ul class="results-list">
                                 <li><i class="fas fa-check"></i> Mostra os trabalhos do salão de forma profissional</li>
@@ -515,18 +532,161 @@
                                 <li><i class="fas fa-check"></i> Aparece nas buscas do Google</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
+                        <div class="experience-tech">
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">Responsivo</span>
                         </div>
-                        <div class="project-links">
+                        <div class="experience-links">
                             <a href="https://github.com/wesleystoss/salao-de-beleza" target="_blank" class="btn btn-small">
                                 <i class="fab fa-github"></i> Código
                             </a>
                             <a href="https://salao-de-beleza.wesleystoss.com.br/" target="_blank" rel="noopener" class="btn btn-small btn-live">
                                 <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container das Experiências -->
+            <div class="experience-grid" id="experiences-container" style="display: none;">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="experience-title">
+                            <h3>Salesforce</h3>
+                            <span class="experience-category">CRM & Automação</span>
+                            <div class="experience-badges">
+                                <span class="experience-badge admin">Administrador</span>
+                                <span class="experience-badge dev">Desenvolvedor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <p>
+                            Especialista na plataforma Salesforce com sólida experiência em desenvolvimento de aplicações customizadas, 
+                            automação de processos, integrações com sistemas externos e criação de relatórios avançados. 
+                            Especializado em APEX, Visualforce e Lightning Web Components.
+                        </p>
+                        <div class="experience-results">
+                            <h4>Principais competências:</h4>
+                            <ul class="results-list">
+                                <li><i class="fas fa-check"></i> Desenvolvimento em APEX e Visualforce</li>
+                                <li><i class="fas fa-check"></i> Automação com Process Builder e Flow</li>
+                                <li><i class="fas fa-check"></i> Integrações via REST/SOAP APIs</li>
+                                <li><i class="fas fa-check"></i> Customização de objetos e campos</li>
+                                <li><i class="fas fa-check"></i> Criação de relatórios e dashboards</li>
+                            </ul>
+                        </div>
+                        <div class="experience-tech">
+                            <span class="tech-tag">APEX</span>
+                            <span class="tech-tag">Visualforce</span>
+                            <span class="tech-tag">Lightning</span>
+                            <span class="tech-tag">SOQL</span>
+                        </div>
+                        <div class="experience-links">
+                            <a href="lp/salesforce.html" target="_blank" class="btn btn-small">
+                                <i class="fas fa-info-circle"></i> Saiba Mais
+                            </a>
+                            <a href="https://trailhead.salesforce.com/pt-BR" target="_blank" rel="noopener" class="btn btn-small btn-live">
+                                <i class="fas fa-external-link-alt"></i> Trailhead
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="experience-title">
+                            <h3>Zendesk</h3>
+                            <span class="experience-category">Suporte & Atendimento</span>
+                            <div class="experience-badges">
+                                <span class="experience-badge admin">Administrador</span>
+                                <span class="experience-badge dev">Desenvolvedor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <p>
+                            Especializado na plataforma Zendesk para criação de sistemas de atendimento ao cliente, 
+                            configuração de workflows, automação de tickets e desenvolvimento de integrações customizadas. 
+                            Foco em melhorar a experiência do cliente e eficiência do suporte.
+                        </p>
+                        <div class="experience-results">
+                            <h4>Principais competências:</h4>
+                            <ul class="results-list">
+                                <li><i class="fas fa-check"></i> Configuração de workflows e automações</li>
+                                <li><i class="fas fa-check"></i> Desenvolvimento de apps customizados</li>
+                                <li><i class="fas fa-check"></i> Integração com sistemas externos</li>
+                                <li><i class="fas fa-check"></i> Criação de relatórios e métricas</li>
+                                <li><i class="fas fa-check"></i> Configuração de SLA e escalonamento</li>
+                            </ul>
+                        </div>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Zendesk API</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Webhooks</span>
+                            <span class="tech-tag">Apps Framework</span>
+                        </div>
+                        <div class="experience-links">
+                            <a href="lp/zendesk.html" target="_blank" class="btn btn-small">
+                                <i class="fas fa-info-circle"></i> Saiba Mais
+                            </a>
+                            <a href="https://developer.zendesk.com/" target="_blank" rel="noopener" class="btn btn-small btn-live">
+                                <i class="fas fa-external-link-alt"></i> Developer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="experience-title">
+                            <h3>Blip</h3>
+                            <span class="experience-category">Chatbots & Automação</span>
+                            <div class="experience-badges">
+                                <span class="experience-badge admin">Administrador</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <p>
+                            Especialista na plataforma Blip para desenvolvimento de chatbots inteligentes, 
+                            automação de atendimento e integração com múltiplos canais de comunicação. 
+                            Especializado em criar experiências conversacionais que melhoram o engajamento do cliente.
+                        </p>
+                        <div class="experience-results">
+                            <h4>Principais competências:</h4>
+                            <ul class="results-list">
+                                <li><i class="fas fa-check"></i> Desenvolvimento de chatbots conversacionais</li>
+                                <li><i class="fas fa-check"></i> Integração com WhatsApp Business</li>
+                                <li><i class="fas fa-check"></i> Automação de fluxos de atendimento</li>
+                                <li><i class="fas fa-check"></i> Análise de dados e métricas</li>
+                                <li><i class="fas fa-check"></i> Integração com APIs externas</li>
+                            </ul>
+                        </div>
+                        <div class="experience-tech">
+                            <span class="tech-tag">Blip API</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">WhatsApp Business</span>
+                            <span class="tech-tag">Webhooks</span>
+                        </div>
+                        <div class="experience-links">
+                            <a href="lp/blip.html" target="_blank" class="btn btn-small">
+                                <i class="fas fa-info-circle"></i> Saiba Mais
+                            </a>
+                            <a href="https://developers.blip.ai/" target="_blank" rel="noopener" class="btn btn-small btn-live">
+                                <i class="fas fa-external-link-alt"></i> Developers
                             </a>
                         </div>
                     </div>
