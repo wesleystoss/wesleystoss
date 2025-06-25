@@ -2816,3 +2816,16 @@ body.dark-theme .toggle-btn.active {
         padding: 15px 20px;
     }
 } 
+
+/* Estilos para badges admin e dev no tema dark */
+body.dark-theme .experience-badge.admin {
+    background: #1e40af;
+    color: #fff;
+    box-shadow: 0 2px 8px 0 rgba(30,64,175,0.25);
+}
+
+body.dark-theme .experience-badge.dev {
+    background: #ea580c;
+    color: #fff;
+    box-shadow: 0 2px 8px 0 rgba(234,88,12,0.25);
+}
