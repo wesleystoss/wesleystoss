@@ -799,22 +799,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Função para alternar entre Projetos e Experiências
 function toggleView(view) {
-    const projectsContainer = document.getElementById('projects-container');
+    const experienceContainer = document.getElementById('experience-container');
     const experiencesContainer = document.getElementById('experiences-container');
-    const toggleProjects = document.getElementById('toggle-projects');
+    const toggleexperience = document.getElementById('toggle-experience');
     const toggleExperiences = document.getElementById('toggle-experiences');
     const sectionSubtitle = document.getElementById('section-subtitle');
 
-    if (view === 'projects') {
-        projectsContainer.style.display = 'grid';
+    if (view === 'experience') {
+        experienceContainer.style.display = 'grid';
         experiencesContainer.style.display = 'none';
-        toggleProjects.classList.add('active');
+        toggleexperience.classList.add('active');
         toggleExperiences.classList.remove('active');
         sectionSubtitle.textContent = 'Soluções que geraram resultados reais';
     } else if (view === 'experiences') {
-        projectsContainer.style.display = 'none';
+        experienceContainer.style.display = 'none';
         experiencesContainer.style.display = 'grid';
-        toggleProjects.classList.remove('active');
+        toggleexperience.classList.remove('active');
         toggleExperiences.classList.add('active');
         sectionSubtitle.textContent = 'Plataformas e tecnologias com que trabalho';
     }
@@ -822,8 +822,8 @@ function toggleView(view) {
 
 // Inicializar com projetos por padrão
 document.addEventListener('DOMContentLoaded', () => {
-    const projectsSection = document.getElementById('projetos');
-    if (projectsSection) {
-        toggleView('projects');
+    const experienceSection = document.getElementById('projetos');
+    if (experienceSection) {
+        toggleView('experience');
     }
 }); 

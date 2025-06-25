@@ -694,8 +694,8 @@ section {
     font-weight: 500;
 }
 
-/* Projetos Section */
-.projects-grid {
+/* Experiências Section */
+.experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
@@ -1577,7 +1577,7 @@ section {
         gap: 15px;
     }
 
-    .projects-grid {
+    .experience-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
@@ -1617,7 +1617,7 @@ section {
         color: var(--primary-color);
     }
 
-    .projects-grid {
+    .experience-grid {
         justify-items: center;
         text-align: center;
     }
@@ -2059,7 +2059,7 @@ body.dark-theme .contact-method.primary-contact i {
     color: #fff;
 }
 
-/* Estilos para botões dos projetos no tema dark */
+/* Estilos para botões dos experiências no tema dark */
 body.dark-theme .project-links .btn-small {
     background: #374151;
     color: #e5e7eb;
@@ -2100,7 +2100,7 @@ body.dark-theme .project-links .btn-live:hover i {
     color: #fff;
 }
 
-/* Estilos para ícones dos botões dos projetos */
+/* Estilos para ícones dos botões dos experiências */
 .project-links .btn-small i,
 .project-links .btn-live i {
     color: #fbbf24;
@@ -2175,7 +2175,7 @@ body.dark-theme .contact-fixed-btn:hover {
     color: white;
 }
 
-/* Estilos responsivos para projetos */
+/* Estilos responsivos para experiências */
 @media (max-width: 768px) {
     .project-header {
         padding: 12px 15px 10px;
