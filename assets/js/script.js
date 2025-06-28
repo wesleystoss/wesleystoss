@@ -437,6 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbarEl.innerHTML = html;
                 const navActions = navbarEl.querySelector('.nav-actions');
                 if (navActions && !navActions.querySelector('#theme-toggle')) {
+                    const savedTheme = localStorage.getItem('theme');
                     const btn = document.createElement('button');
                     btn.id = 'theme-toggle';
                     btn.className = 'theme-toggle-btn';
