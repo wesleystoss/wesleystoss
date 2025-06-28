@@ -432,6 +432,14 @@ document.addEventListener('DOMContentLoaded', updateFooterYear);
 
 // Alternância de tema dark/light
 document.addEventListener('DOMContentLoaded', function() {
+    // Verificar se estamos em uma página LP (que tem seu próprio script de tema)
+    const isLandingPage = window.location.pathname.includes('/lp/');
+    
+    if (isLandingPage) {
+        console.log('Página LP detectada - pulando script de tema principal');
+        return;
+    }
+    
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 

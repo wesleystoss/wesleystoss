@@ -12,6 +12,10 @@
 </head>
 <body>
     <main>
+        <!-- Botão de tema fixo -->
+        <button id="theme-toggle" class="theme-toggle-btn" style="position: fixed; top: 24px; right: 24px; z-index: 1000; background: rgba(255,255,255,0.9); border: 1px solid var(--primary-color); color: var(--primary-color); padding: 0.5rem; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(4px);">
+            <i class="fas fa-moon"></i>
+        </button>
         <section class="hero disruptivo" style="min-height: 70vh; position: relative;">
             <a href="/" class="btn-ghost-portfolio" style="position: absolute; top: 24px; left: 24px; z-index: 10; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 24px; background: rgba(255,255,255,0.7); color: var(--primary-color); font-weight: 500; font-size: 0.98rem; border: 1.5px solid var(--primary-color); box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: background .2s, color .2s, border .2s; backdrop-filter: blur(4px);">
                 <i class="fas fa-arrow-left" style="font-size: 1rem;"></i> <span>Ver portfólio completo</span>
@@ -253,8 +257,70 @@
         </section>
     </main>
     <div id="footer"></div>
+    
     <script src="../assets/js/script.js"></script>
     <script>
+    // Implementação simples do tema
+    console.log('=== INICIANDO SCRIPT DE TEMA ===');
+    
+    // Função para alternar tema
+    function toggleTheme() {
+        console.log('Função toggleTheme chamada!');
+        const body = document.body;
+        const isDark = body.classList.contains('dark-theme');
+        
+        if (isDark) {
+            console.log('Removendo tema dark');
+            body.classList.remove('dark-theme');
+            document.documentElement.classList.remove('dark-theme');
+            document.querySelector('#theme-toggle i').className = 'fas fa-moon';
+            localStorage.setItem('theme', 'light');
+        } else {
+            console.log('Adicionando tema dark');
+            body.classList.add('dark-theme');
+            document.documentElement.classList.add('dark-theme');
+            document.querySelector('#theme-toggle i').className = 'fas fa-sun';
+            localStorage.setItem('theme', 'dark');
+        }
+        
+        console.log('Tema atual:', localStorage.getItem('theme'));
+    }
+    
+    // Função para aplicar tema salvo
+    function applySavedTheme() {
+        console.log('Aplicando tema salvo...');
+        const savedTheme = localStorage.getItem('theme');
+        console.log('Tema salvo:', savedTheme);
+        
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.documentElement.classList.add('dark-theme');
+            const icon = document.querySelector('#theme-toggle i');
+            if (icon) icon.className = 'fas fa-sun';
+        }
+    }
+    
+    // Aguardar DOM carregar
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM carregado!');
+        
+        // Aplicar tema salvo
+        applySavedTheme();
+        
+        // Adicionar evento ao botão
+        const themeBtn = document.getElementById('theme-toggle');
+        console.log('Botão encontrado:', themeBtn);
+        
+        if (themeBtn) {
+            console.log('Adicionando evento de clique');
+            themeBtn.onclick = toggleTheme;
+            console.log('Evento adicionado com sucesso!');
+        } else {
+            console.error('Botão de tema não encontrado!');
+        }
+    });
+    
+    // Carregar footer
     document.addEventListener('DOMContentLoaded', function() {
         const footerEl = document.getElementById('footer');
         if (footerEl) {

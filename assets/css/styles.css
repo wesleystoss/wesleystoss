@@ -3137,3 +3137,228 @@ body.dark-theme .modal-content .level-badge.secondary {
         font-size: 0.85rem;
     }
 }
+
+/* ===== ESTILOS ESPECÍFICOS PARA PÁGINAS LP (LANDING PAGES) ===== */
+
+/* Estilos para o botão de tema fixo nas LPs */
+.theme-toggle-btn {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1000;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255,255,255,1);
+    transform: scale(1.1);
+}
+
+/* Botão "Ver portfólio completo" no tema dark */
+body.dark-theme .btn-ghost-portfolio {
+    background: rgba(26,26,26,0.7) !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+body.dark-theme .btn-ghost-portfolio:hover {
+    background: rgba(26,26,26,0.9) !important;
+    color: #ffffff !important;
+}
+
+/* Botão de tema no tema dark */
+body.dark-theme .theme-toggle-btn {
+    background: rgba(26,26,26,0.9) !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme .theme-toggle-btn:hover {
+    background: rgba(26,26,26,1) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Estilos específicos para seções das LPs no tema dark */
+body.dark-theme .about {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-theme .about-content {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-theme .about-content p {
+    color: #e0e0e0 !important;
+}
+
+/* Seção "O que é o Salesforce" - cards específicos */
+body.dark-theme .about .container > div[style*="background: #fff"] {
+    background-color: #1a1a1a !important;
+    border: 1px solid #404040 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-theme .about .container > div[style*="background: #fff"] h4 {
+    color: #ffffff !important;
+}
+
+body.dark-theme .about .container > div[style*="background: #fff"] p {
+    color: #e0e0e0 !important;
+}
+
+/* Seção "Case Real" - cards específicos */
+body.dark-theme section[style*="background: var(--background-alt)"] {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-theme section[style*="background: var(--background-alt)"] .container {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-theme section[style*="background: var(--background-alt)"] .container > div[style*="background: #fff"] {
+    background-color: #1a1a1a !important;
+    border: 1px solid #404040 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-theme section[style*="background: var(--background-alt)"] .container > div[style*="background: #fff"] h4 {
+    color: #ffffff !important;
+}
+
+body.dark-theme section[style*="background: var(--background-alt)"] .container > div[style*="background: #fff"] p {
+    color: #e0e0e0 !important;
+}
+
+/* Seção "Minha Experiência" */
+body.dark-theme .container[style*="padding: 4rem 0"] {
+    background-color: #1a1a1a !important;
+}
+
+body.dark-theme .container[style*="padding: 4rem 0"] > div {
+    border-left-color: var(--primary-color) !important;
+}
+
+body.dark-theme .container[style*="padding: 4rem 0"] h3 {
+    color: var(--primary-color) !important;
+}
+
+body.dark-theme .container[style*="padding: 4rem 0"] h4 {
+    color: var(--primary-color) !important;
+}
+
+body.dark-theme .container[style*="padding: 4rem 0"] p {
+    color: #e0e0e0 !important;
+}
+
+/* Seção "O Processo de Transformação" */
+body.dark-theme .container[style*="padding: 4rem 0"] h4 {
+    color: #ffffff !important;
+}
+
+body.dark-theme .container[style*="padding: 4rem 0"] p {
+    color: #e0e0e0 !important;
+}
+
+/* Seção "Conhecimento Profundo" */
+body.dark-theme .container[style*="padding: 4rem 0"] h3 {
+    color: var(--primary-color) !important;
+}
+
+body.dark-theme .container[style*="padding: 4rem 0"] .info-box {
+    background-color: #2d2d2d !important;
+}
+
+/* Seção de contato */
+body.dark-theme #contato {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-theme #contato .about-content {
+    background-color: #2d2d2d !important;
+}
+
+/* Estilos gerais para elementos com background branco */
+body.dark-theme div[style*="background: #fff"] {
+    background-color: #1a1a1a !important;
+    border: 1px solid #404040 !important;
+    border-radius: 12px !important;
+}
+
+body.dark-theme div[style*="background: #fff"] h4 {
+    color: #ffffff !important;
+}
+
+body.dark-theme div[style*="background: #fff"] p {
+    color: #e0e0e0 !important;
+}
+
+/* Estilos para elementos com background-alt */
+body.dark-theme div[style*="background: var(--background-alt)"] {
+    background-color: #2d2d2d !important;
+}
+
+/* Estilos para listas */
+body.dark-theme ul li {
+    color: #e0e0e0 !important;
+}
+
+body.dark-theme ul li i {
+    color: var(--primary-color) !important;
+}
+
+/* Estilos para textos em itálico */
+body.dark-theme p[style*="font-style: italic"] {
+    color: #b0b0b0 !important;
+}
+
+/* Estilos para textos em itálico */
+body.dark-theme p[style*="font-style: italic"] {
+    color: #b0b0b0 !important;
+}
+
+/* Botão WhatsApp destaque para LPs */
+.btn-whatsapp-destaque {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    background: #25d366;
+    color: #fff !important;
+    font-size: 1.35rem;
+    font-weight: 700;
+    padding: 1.2rem 2.5rem;
+    border-radius: 40px;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.18);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    border: none;
+    outline: none;
+    letter-spacing: 0.01em;
+}
+
+.btn-whatsapp-destaque i {
+    font-size: 1.6rem;
+}
+
+.btn-whatsapp-destaque:hover, .btn-whatsapp-destaque:focus {
+    background: #1ebe5d;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 32px rgba(37,211,102,0.25);
+    color: #fff !important;
+}
