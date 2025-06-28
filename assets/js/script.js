@@ -420,20 +420,41 @@ function updateFooterYear() {
 }
 document.addEventListener('DOMContentLoaded', updateFooterYear);
 
+// Verificação inicial do tema (antes do DOM carregar para evitar flash)
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    console.log('Tema salvo no localStorage:', savedTheme);
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+        console.log('Tema dark aplicado inicialmente');
+    }
+})();
+
 // Alternância de tema dark/light
 document.addEventListener('DOMContentLoaded', function() {
+    // Verificar se estamos em uma página LP (que tem seu próprio script de tema)
+    const isLandingPage = window.location.pathname.includes('/lp/');
+    
+    if (isLandingPage) {
+        console.log('Página LP detectada - pulando script de tema principal');
+        return;
+    }
+    
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
     function setTheme(dark) {
+        console.log('Aplicando tema:', dark ? 'dark' : 'light');
         if (dark) {
             document.body.classList.add('dark-theme');
+            document.documentElement.classList.add('dark-theme');
             if (themeIcon) {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
             }
         } else {
             document.body.classList.remove('dark-theme');
+            document.documentElement.classList.remove('dark-theme');
             if (themeIcon) {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
@@ -442,15 +463,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleTheme() {
-        const isDark = document.body.classList.toggle('dark-theme');
+        const isDark = !document.body.classList.contains('dark-theme');
+        console.log('Alternando tema para:', isDark ? 'dark' : 'light');
         setTheme(isDark);
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        console.log('Tema salvo no localStorage:', localStorage.getItem('theme'));
     }
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', toggleTheme);
         // Carregar preferência do usuário
         const savedTheme = localStorage.getItem('theme');
+        console.log('Carregando tema salvo:', savedTheme);
         if (savedTheme === 'dark') {
             setTheme(true);
         } else {
@@ -776,4 +800,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (experienceSection) {
         toggleView('experience');
     }
-}); 
+});
+
+// Injeção dinâmica do chat original em todas as páginas
+function injectOriginalChat() {
+    // Verifica se já existe o chat
+    if (document.getElementById('contact-chat') || document.getElementById('contact-toggle')) return;
+    
+    // Caminho relativo seguro para qualquer página
+    const base = window.location.pathname.includes('/lp/') ? '../assets/components/' : './assets/components/';
+    
+    fetch(base + 'chat-original.html')
+        .then(res => res.text())
+        .then(html => {
+            document.body.insertAdjacentHTML('beforeend', html);
+            
+            // Ajusta o caminho da imagem do perfil para LPs
+            const avatarImg = document.querySelector('.chat-avatar-img');
+            if (avatarImg && window.location.pathname.includes('/lp/')) {
+                avatarImg.src = '../assets/images/profile.jpg';
+            }
+        })
+        .catch(err => console.log('Chat não carregado:', err));
+}
+
+document.addEventListener('DOMContentLoaded', injectOriginalChat); 
