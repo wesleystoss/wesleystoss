@@ -800,4 +800,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (experienceSection) {
         toggleView('experience');
     }
-}); 
+});
+
+// Injeção dinâmica do chat original em todas as páginas
+function injectOriginalChat() {
+    // Verifica se já existe o chat
+    if (document.getElementById('contact-chat') || document.getElementById('contact-toggle')) return;
+    
+    // Caminho relativo seguro para qualquer página
+    const base = window.location.pathname.includes('/lp/') ? '../assets/components/' : './assets/components/';
+    
+    fetch(base + 'chat-original.html')
+        .then(res => res.text())
+        .then(html => {
+            document.body.insertAdjacentHTML('beforeend', html);
+            
+            // Ajusta o caminho da imagem do perfil para LPs
+            const avatarImg = document.querySelector('.chat-avatar-img');
+            if (avatarImg && window.location.pathname.includes('/lp/')) {
+                avatarImg.src = '../assets/images/profile.jpg';
+            }
+        })
+        .catch(err => console.log('Chat não carregado:', err));
+}
+
+document.addEventListener('DOMContentLoaded', injectOriginalChat); 
