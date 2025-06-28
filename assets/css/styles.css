@@ -1639,6 +1639,10 @@ section {
         display: flex;
         align-items: center;
     }
+    .nav-actions {
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3143,8 +3147,8 @@ body.dark-theme .modal-content .level-badge.secondary {
 /* Estilos para o botão de tema fixo nas LPs */
 .theme-toggle-btn {
     position: fixed;
-    top: 24px;
-    right: 24px;
+    top: 12.5px;
+    right: 156.4px;
     z-index: 1000;
     background: rgba(255,255,255,0.9);
     border: 1px solid var(--primary-color);
@@ -3443,4 +3447,24 @@ body.dark-theme .chat-box {
     min-height: 80px;
     font-size: 1rem;
     background: none;
+}
+
+/* Botão de tema na página principal - ajuste para não sobrepor o hamburguer */
+body:not([class*="dark-theme"]) .theme-toggle-btn {
+    right: 60px;
+}
+
+body.dark-theme .theme-toggle-btn {
+    right: 60px;
+}
+
+/* Botão de tema na página principal - ajuste para não sobrepor o hamburguer */
+.nav-actions .theme-toggle-btn {
+    right: 60px !important;
+}
+
+/* Regra mais específica para garantir o posicionamento correto */
+.navbar .nav-actions .theme-toggle-btn {
+    right: 60px !important;
+    position: static !important;
 }

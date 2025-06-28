@@ -409,8 +409,6 @@ window.addEventListener('load', () => {
     }
 });
 
-console.log('🚀 Portfólio de Wesley Santos carregado com sucesso!');
-
 // Atualizar automaticamente o ano do copyright no footer
 function updateFooterYear() {
     var yearSpan = document.getElementById('footer-year');
@@ -423,28 +421,108 @@ document.addEventListener('DOMContentLoaded', updateFooterYear);
 // Verificação inicial do tema (antes do DOM carregar para evitar flash)
 (function() {
     const savedTheme = localStorage.getItem('theme');
-    console.log('Tema salvo no localStorage:', savedTheme);
     if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark-theme');
-        console.log('Tema dark aplicado inicialmente');
     }
 })();
 
-// Alternância de tema dark/light
-document.addEventListener('DOMContentLoaded', function() {
-    // Verificar se estamos em uma página LP (que tem seu próprio script de tema)
-    const isLandingPage = window.location.pathname.includes('/lp/');
-    
-    if (isLandingPage) {
-        console.log('Página LP detectada - pulando script de tema principal');
-        return;
+// Carregar componentes reutilizáveis (navbar e footer)
+document.addEventListener('DOMContentLoaded', () => {
+    const isLP = window.location.pathname.includes('/lp/');
+    const navbarEl = document.getElementById('navbar');
+    if (navbarEl && !isLP) {
+        fetch('assets/components/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                navbarEl.innerHTML = html;
+                const navActions = navbarEl.querySelector('.nav-actions');
+                if (navActions && !navActions.querySelector('#theme-toggle')) {
+                    const savedTheme = localStorage.getItem('theme');
+                    const btn = document.createElement('button');
+                    btn.id = 'theme-toggle';
+                    btn.className = 'theme-toggle-btn';
+                    btn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                    navActions.appendChild(btn);
+                }
+                initNavbarEvents();
+                
+                // Inicializar funcionalidade de tema após o botão ser criado
+                initThemeToggle();
+            });
     }
-    
+    // Para LPs, injetar apenas o botão de tema fixo no topo direito
+    if (isLP) {
+        // Aplicar tema inicial para LPs
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.documentElement.classList.add('dark-theme');
+        }
+        
+        if (!document.getElementById('theme-toggle')) {
+            const btn = document.createElement('button');
+            btn.id = 'theme-toggle';
+            btn.className = 'theme-toggle-btn';
+            btn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            btn.style.position = 'fixed';
+            btn.style.top = '18px';
+            btn.style.right = '18px';
+            btn.style.zIndex = '2000';
+            btn.style.background = 'rgba(255,255,255,0.95)';
+            btn.style.border = '1px solid var(--primary-color)';
+            btn.style.color = 'var(--primary-color)';
+            btn.style.padding = '0.5rem';
+            btn.style.borderRadius = '50%';
+            btn.style.width = '45px';
+            btn.style.height = '45px';
+            btn.style.display = 'flex';
+            btn.style.alignItems = 'center';
+            btn.style.justifyContent = 'center';
+            btn.style.cursor = 'pointer';
+            btn.style.transition = 'all 0.3s ease';
+            btn.style.backdropFilter = 'blur(4px)';
+            document.body.appendChild(btn);
+            
+            // Adicionar evento de clique diretamente
+            btn.addEventListener('click', function() {
+                const isDark = !document.body.classList.contains('dark-theme');
+                if (isDark) {
+                    document.body.classList.add('dark-theme');
+                    document.documentElement.classList.add('dark-theme');
+                    btn.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    document.body.classList.remove('dark-theme');
+                    document.documentElement.classList.remove('dark-theme');
+                    btn.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+        }
+        
+        // Inicializar funcionalidade de tema para LPs
+        setTimeout(() => {
+            initThemeToggle();
+        }, 100);
+    }
+    // Footer
+    const footerEl = document.getElementById('footer');
+    if (footerEl) {
+        let footerPath = 'assets/components/footer.html';
+        if (isLP) footerPath = '../assets/components/footer.html';
+        fetch(footerPath)
+            .then(res => res.text())
+            .then(html => {
+                footerEl.innerHTML = html;
+            });
+    }
+});
+
+// Função para inicializar a funcionalidade de tema
+function initThemeToggle() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
     function setTheme(dark) {
-        console.log('Aplicando tema:', dark ? 'dark' : 'light');
         if (dark) {
             document.body.classList.add('dark-theme');
             document.documentElement.classList.add('dark-theme');
@@ -464,24 +542,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function toggleTheme() {
         const isDark = !document.body.classList.contains('dark-theme');
-        console.log('Alternando tema para:', isDark ? 'dark' : 'light');
         setTheme(isDark);
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        console.log('Tema salvo no localStorage:', localStorage.getItem('theme'));
     }
 
     if (themeToggleBtn) {
+        // Remover event listener anterior se existir
+        themeToggleBtn.removeEventListener('click', toggleTheme);
+        // Adicionar novo event listener
         themeToggleBtn.addEventListener('click', toggleTheme);
+        
         // Carregar preferência do usuário
         const savedTheme = localStorage.getItem('theme');
-        console.log('Carregando tema salvo:', savedTheme);
         if (savedTheme === 'dark') {
             setTheme(true);
         } else {
             setTheme(false);
         }
     }
-});
+}
 
 // Botão Fixo de Contato (Mobile)
 const contactFixedBtn = document.getElementById('contact-fixed-btn');
@@ -744,33 +823,6 @@ function initNavbarEvents() {
     });
 }
 
-// Carregar componentes reutilizáveis (navbar e footer)
-document.addEventListener('DOMContentLoaded', () => {
-    // Só carrega o navbar se não estiver em /lp/
-    const isLP = window.location.pathname.includes('/lp/');
-    const navbarEl = document.getElementById('navbar');
-    if (navbarEl && !isLP) {
-        fetch('assets/components/navbar.html')
-            .then(res => res.text())
-            .then(html => {
-                navbarEl.innerHTML = html;
-                initNavbarEvents(); // Inicializa eventos após inserir navbar
-            });
-    }
-    // Footer
-    const footerEl = document.getElementById('footer');
-    if (footerEl) {
-        // Caminho relativo para o footer
-        let footerPath = 'assets/components/footer.html';
-        if (isLP) footerPath = '../assets/components/footer.html';
-        fetch(footerPath)
-            .then(res => res.text())
-            .then(html => {
-                footerEl.innerHTML = html;
-            });
-    }
-});
-
 // Função para alternar entre Projetos e Experiências
 function toggleView(view) {
     const experienceContainer = document.getElementById('experience-container');
@@ -821,7 +873,9 @@ function injectOriginalChat() {
                 avatarImg.src = '../assets/images/profile.jpg';
             }
         })
-        .catch(err => console.log('Chat não carregado:', err));
+        .catch(err => {
+            // Chat não carregado
+        });
 }
 
 document.addEventListener('DOMContentLoaded', injectOriginalChat); 
