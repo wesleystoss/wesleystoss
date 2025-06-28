@@ -26,19 +26,37 @@
                     btn.setAttribute('aria-label', 'Alternar tema');
                     btn.innerHTML = '<i class="fas fa-moon"></i>';
                     navActions.insertBefore(btn, navActions.firstChild);
-                    // Adiciona evento de alternância de tema
+                    
+                    // Adicionar evento de tema diretamente aqui
                     btn.addEventListener('click', function() {
-                        document.body.classList.toggle('dark-theme');
-                        // Troca o ícone
-                        const icon = btn.querySelector('i');
-                        if (document.body.classList.contains('dark-theme')) {
-                            icon.classList.remove('fa-moon');
-                            icon.classList.add('fa-sun');
+                        const isDark = !document.body.classList.contains('dark-theme');
+                        console.log('Botão clicado - Alternando tema para:', isDark ? 'dark' : 'light');
+                        
+                        if (isDark) {
+                            document.body.classList.add('dark-theme');
+                            document.documentElement.classList.add('dark-theme');
+                            btn.querySelector('i').classList.remove('fa-moon');
+                            btn.querySelector('i').classList.add('fa-sun');
                         } else {
-                            icon.classList.remove('fa-sun');
-                            icon.classList.add('fa-moon');
+                            document.body.classList.remove('dark-theme');
+                            document.documentElement.classList.remove('dark-theme');
+                            btn.querySelector('i').classList.remove('fa-sun');
+                            btn.querySelector('i').classList.add('fa-moon');
                         }
+                        
+                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                        console.log('Tema salvo no localStorage:', localStorage.getItem('theme'));
                     });
+                    
+                    // Aplicar tema salvo
+                    const savedTheme = localStorage.getItem('theme');
+                    console.log('Aplicando tema salvo:', savedTheme);
+                    if (savedTheme === 'dark') {
+                        document.body.classList.add('dark-theme');
+                        document.documentElement.classList.add('dark-theme');
+                        btn.querySelector('i').classList.remove('fa-moon');
+                        btn.querySelector('i').classList.add('fa-sun');
+                    }
                 }
             });
             observer.observe(navbarEl, { childList: true, subtree: true });

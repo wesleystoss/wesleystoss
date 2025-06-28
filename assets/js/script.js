@@ -420,20 +420,33 @@ function updateFooterYear() {
 }
 document.addEventListener('DOMContentLoaded', updateFooterYear);
 
+// Verificação inicial do tema (antes do DOM carregar para evitar flash)
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    console.log('Tema salvo no localStorage:', savedTheme);
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+        console.log('Tema dark aplicado inicialmente');
+    }
+})();
+
 // Alternância de tema dark/light
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
     function setTheme(dark) {
+        console.log('Aplicando tema:', dark ? 'dark' : 'light');
         if (dark) {
             document.body.classList.add('dark-theme');
+            document.documentElement.classList.add('dark-theme');
             if (themeIcon) {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
             }
         } else {
             document.body.classList.remove('dark-theme');
+            document.documentElement.classList.remove('dark-theme');
             if (themeIcon) {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
@@ -442,15 +455,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleTheme() {
-        const isDark = document.body.classList.toggle('dark-theme');
+        const isDark = !document.body.classList.contains('dark-theme');
+        console.log('Alternando tema para:', isDark ? 'dark' : 'light');
         setTheme(isDark);
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        console.log('Tema salvo no localStorage:', localStorage.getItem('theme'));
     }
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', toggleTheme);
         // Carregar preferência do usuário
         const savedTheme = localStorage.getItem('theme');
+        console.log('Carregando tema salvo:', savedTheme);
         if (savedTheme === 'dark') {
             setTheme(true);
         } else {
