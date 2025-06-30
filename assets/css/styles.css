@@ -64,6 +64,7 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: var(--primary-color);
+    width: 65px;
 }
 
 .nav-menu {
@@ -1370,6 +1371,7 @@ section {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    width: 150px;
 }
 
 .footer-social {
