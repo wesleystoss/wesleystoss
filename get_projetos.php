@@ -19,7 +19,7 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 
-    $stmt = $pdo->query('SELECT * FROM projetos ORDER BY id DESC');
+    $stmt = $pdo->query('SELECT * FROM projetos ORDER BY OrdemApresentacao ASC');
     $projetos = $stmt->fetchAll();
 
     // Transformar resultados e tecnologias em arrays
