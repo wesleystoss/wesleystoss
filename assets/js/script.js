@@ -878,4 +878,52 @@ function injectOriginalChat() {
         });
 }
 
-document.addEventListener('DOMContentLoaded', injectOriginalChat); 
+document.addEventListener('DOMContentLoaded', injectOriginalChat);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('experience-container');
+    if (!container) return;
+
+    fetch('get_projetos.php')
+        .then(response => response.json())
+        .then(projetos => {
+            if (!Array.isArray(projetos)) return;
+            container.innerHTML = '';
+            projetos.forEach(projeto => {
+                container.innerHTML += `
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="${projeto.icone}"></i>
+                        </div>
+                        <div class="experience-title">
+                            <h3>${projeto.titulo}</h3>
+                            <span class="experience-category">${projeto.categoria || ''}</span>
+                            <div class="experience-badges">
+                                <span class="experience-badge success">${projeto.status || ''}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <p>${projeto.descricao || ''}</p>
+                        <div class="experience-results">
+                            <h4>O que este projeto resolve:</h4>
+                            <ul class="results-list">
+                                ${(projeto.resultados || []).map(item => `<li><i class='fas fa-check'></i> ${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="experience-tech">
+                            ${(projeto.tecnologias || []).map(tech => `<span class='tech-tag'>${tech}</span>`).join('')}
+                        </div>
+                        <div class="experience-links">
+                            ${projeto.link_demo ? `<a href="${projeto.link_demo}" target="_blank" rel="noopener" class="btn btn-small btn-live"><i class="fas fa-external-link-alt"></i> Demo</a>` : ''}
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+        })
+        .catch(err => {
+            container.innerHTML = '<p style="color:red">Erro ao carregar projetos.</p>';
+        });
+}); 
