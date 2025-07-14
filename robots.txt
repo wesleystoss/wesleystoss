@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wesleystoss.com.br/sitemap.xml 
